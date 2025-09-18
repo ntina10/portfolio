@@ -1,11 +1,13 @@
 import HoverHighlight from "./HoverHighlight";
 import data from "../assets/data.json";
+import Greeting from "./Greeting";
 
 const Intro = () => {
   return (
-    <h1 className="intro pl-40">
-      Hello. My name is Konstantina. <br /> As a software developer, I love
-      bringing{" "}
+    <h1 className="intro pl-40 py-30">
+      Hello.
+      <Greeting /> My name is Konstantina. <br /> As a software developer, I
+      love bringing{" "}
       <HoverHighlight pathData={data.ideas_to_life}>
         ideas to life
       </HoverHighlight>{" "}
