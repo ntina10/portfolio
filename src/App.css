@@ -7,6 +7,14 @@ h1 {
   font-weight: 300;
 }
 
+h2, h3 {
+  font-family: 'Chivo Mono', monospace;
+}
+
+p, li {
+  font-family: 'Lustria', serif;
+}
+
 /* Navbar */
 
 nav {
@@ -15,10 +23,6 @@ nav {
 }
 
 /* Projects */
-
-#projects .title{
-  font-family: 'Chivo Mono', monospace;
-}
 
 #projects {
   background-color: #f2ece1;
@@ -31,3 +35,9 @@ footer {
   color: #9d5454;
 }
 
+/* About */
+
+.skilltag {
+  font-family: 'Lustria', serif;
+  transition: background-color 0.3s, color 0.3s;
+}
