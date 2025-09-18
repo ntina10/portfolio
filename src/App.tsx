@@ -13,9 +13,9 @@ function App() {
       <header>
         <Navbar />
       </header>
-      <button className="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600">
+      {/* <button className="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600">
   Click Me
-</button>
+</button> */}
       <main>
         <Intro />
         <Projects />
