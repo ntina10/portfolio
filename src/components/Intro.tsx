@@ -6,8 +6,11 @@ const Intro = () => {
   return (
     <h1 className="intro pl-40 py-30">
       Hello.
-      <Greeting /> My name is Konstantina. <br /> As a software developer, I
-      love bringing{" "}
+      <Greeting /> My name is Konstantina. <br /> As a{" "}
+      <HoverHighlight pathData={data.software}>
+        software developer
+      </HoverHighlight>{" "}
+      , I love bringing{" "}
       <HoverHighlight pathData={data.ideas_to_life}>
         ideas to life
       </HoverHighlight>{" "}
@@ -15,7 +18,9 @@ const Intro = () => {
       <HoverHighlight pathData={data.web_and_mobile}>
         web and mobile
       </HoverHighlight>{" "}
-      products. I am passionate about creating{" "}
+      products. I am{" "}
+      <HoverHighlight pathData={data.passionate}>passionate</HoverHighlight>{" "}
+      about creating{" "}
       <HoverHighlight pathData={data.user_centered}>
         user-centered
       </HoverHighlight>{" "}

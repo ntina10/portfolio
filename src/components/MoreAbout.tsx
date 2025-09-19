@@ -31,7 +31,7 @@ export default function MoreAbout() {
       transition: {
         x: {
           repeat: Infinity,
-          duration: 15,
+          duration: 25,
           ease: ["linear"],
         },
       },
@@ -78,7 +78,7 @@ export default function MoreAbout() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="content py-3 w-full"
+            className="content py-3 w-full overflow-hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

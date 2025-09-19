@@ -4,7 +4,7 @@ import ProjectFolder from "./ProjectFolder";
 const Projects = () => {
   return (
     <section id="projects">
-      <h2 className="title pt-10 pb-20 pl-40">Projects</h2>
+      <h2 className="title pt-10 pb-20 pl-40">My Projects</h2>
       <div className="px-10 -space-y-14">
         {/* bg-[#f6cf30] */}
         <ProjectFolder title="NNEDS" color="bg-cyan-400">

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface Path {
   path: string;
@@ -18,12 +18,36 @@ export default function HoverHighlight(props: Props) {
   const { path, color, height, viewBox } = pathData;
 
   const [hovered, setHovered] = useState(false);
+  const timerRef = useRef<number | null>(null);
+
+  const handleMouseEnter = () => {
+    // If there's a pending timer to set hovered to false, clear it
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    timerRef.current = window.setTimeout(() => {
+      setHovered(false);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <span
       className="relative inline-block"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {children}
       {/* Animated underline */}
