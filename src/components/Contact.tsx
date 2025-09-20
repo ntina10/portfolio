@@ -25,19 +25,18 @@ const Contact = () => {
       <h2 className="pb-10">Contact Me</h2>
       <div className="flex justify-start items-center gap-8 md:gap-12">
         {contactLinks.map((link) => (
-          <div className="container flex justify-center items-center w-24 h-24 rounded-full bg-purple-200">
-            <a
-              key={link.name}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer" // Important for security
-              className="hover:text-indigo-600 
-                       hover:scale-200 transition-all duration-300"
-            >
+          <a
+            key={link.name}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex justify-center items-center w-24 h-24 rounded-full bg-purple-200 
+             transition-all duration-300"
+          >
+            <div className="group-hover:scale-150 group-hover:text-indigo-600 transition-all duration-300">
               {link.icon}
-              {/* <span className="font-semibold">{link.name}</span> */}
-            </a>
-          </div>
+            </div>
+          </a>
         ))}
       </div>
     </section>

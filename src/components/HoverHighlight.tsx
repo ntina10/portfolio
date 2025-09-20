@@ -32,7 +32,7 @@ export default function HoverHighlight(props: Props) {
   const handleMouseLeave = () => {
     timerRef.current = window.setTimeout(() => {
       setHovered(false);
-    }, 2000);
+    }, 3000);
   };
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@fontsource/ovo";
 
 :root {
   font-family: sans-serif;
@@ -25,10 +26,6 @@ body {
   margin: 0;
   background-color: var(--primary-color);
   color: var(--text-color);
-  /* display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh; */
 }
 
 h1 {
@@ -38,29 +35,4 @@ h1 {
 
 p {
   margin: 0;
-}
-
-
-.handdrawn path {
-  animation: draw 2s ease forwards;
-}
-
-@keyframes drawStroke {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Base styles for the animated SVG stroke */
-.animate-stroke-drawing path,
-.animate-stroke-drawing line,
-.animate-stroke-drawing rect {
-  stroke-dasharray: var(--path-length);
-  /* Defined dynamically per SVG */
-  stroke-dashoffset: var(--path-length);
-  /* Start fully offset */
-  animation: drawStroke 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  /* Animate to 0 offset */
-  animation-delay: var(--animation-delay, 0s);
-  /* Optional delay */
 }

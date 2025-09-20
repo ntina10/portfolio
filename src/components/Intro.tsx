@@ -4,12 +4,12 @@ import Greeting from "./Greeting";
 
 const Intro = () => {
   return (
-    <h1 className="intro pl-40 py-30">
+    <h1 className="intro px-40 py-30 lg:max-w-5/6">
       Hello.
       <Greeting /> My name is Konstantina. <br /> As a{" "}
       <HoverHighlight pathData={data.software}>
         software developer
-      </HoverHighlight>{" "}
+      </HoverHighlight>
       , I love bringing{" "}
       <HoverHighlight pathData={data.ideas_to_life}>
         ideas to life
