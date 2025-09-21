@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import ProjectFolder from "./ProjectFolder";
 
 const ImagesGallery = ({ images }: { images: string[] }) => {
@@ -26,6 +25,7 @@ const Projects = () => {
         <ProjectFolder
           title="NNEDS"
           color="bg-emerald-200"
+          textColor="#A7F3D0"
           tabPosition="left-1/8"
           // isOpen={openFolder === "NNEDS"}
           // onToggle={() =>
@@ -153,6 +153,7 @@ const Projects = () => {
         <ProjectFolder
           title="Ambulance Adventure"
           color="bg-blue-200"
+          textColor="#BFDBFE"
           tabPosition="left-2/8"
           // isOpen={openFolder === "Ambulance Adventure"}
           // onToggle={() =>
@@ -258,6 +259,7 @@ const Projects = () => {
         <ProjectFolder
           title="Moodle"
           color="bg-blue-300"
+          textColor="#93C5FD"
           tabPosition="left-3/8"
           // isOpen={openFolder === "Moodle"}
           // onToggle={() =>
@@ -335,6 +337,7 @@ const Projects = () => {
         <ProjectFolder
           title="CheckIt"
           color="bg-violet-200"
+          textColor="#DDD6FE"
           tabPosition="left-4/8"
           // isOpen={openFolder === "CheckIt"}
           // onToggle={() =>
@@ -390,6 +393,7 @@ const Projects = () => {
         <ProjectFolder
           title="YellowPages"
           color="bg-purple-300"
+          textColor="#DAB2FF"
           tabPosition="left-5/8"
           // isOpen={openFolder === "YellowPages"}
           // onToggle={() =>

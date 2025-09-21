@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 interface Props {
   title: string;
   color: string;
+  textColor: string;
   tabPosition: string;
   children: React.ReactNode;
   // isOpen: boolean;
@@ -13,7 +14,7 @@ interface Props {
 export default function ProjectFolder(props: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { title, color, tabPosition, children } = props;
+  const { title, color, textColor, tabPosition, children } = props;
 
   const contentVariants = {
     hidden: {
@@ -49,7 +50,7 @@ export default function ProjectFolder(props: Props) {
           >
             <h3 className="p-3">{title}</h3>
           </div>
-          <div className="svgContainer">
+          <div className="flex items-center">
             <svg
               width="30"
               height="48"
@@ -58,7 +59,7 @@ export default function ProjectFolder(props: Props) {
             >
               <path
                 d="M2.5 0.5C1.56112 0.168629 0 0 0 0V50.5H38.5C38.5 50.5 36.9064 50.412 36 50C35.3591 49.7087 35.0391 49.4528 34.5 49C34.3333 48.86 33.7106 48.2106 33.5 48L32.5 47L5.5 2.5C5.5 2.5 4.93595 1.83907 4.5 1.5C3.81071 0.963883 3.32346 0.790632 2.5 0.5Z"
-                className={color.replace("bg-", "fill-")}
+                fill={textColor}
               />
             </svg>
           </div>

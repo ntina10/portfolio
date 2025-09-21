@@ -1,5 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { div } from "framer-motion/client";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useState } from "react";
 
 const CardText = ({ text }: { text: string }) => {
@@ -25,28 +24,24 @@ const CardImage = ({ image }: { image: string }) => {
 export default function MoreAbout() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const textMarqueeVariants = {
+  const textMarqueeVariants: Variants = {
     animate: {
       x: [0, -1354], // Move from x=0 to x=-1024 (adjust this value based on text length)
       transition: {
-        x: {
-          repeat: Infinity,
-          duration: 25,
-          ease: ["linear"],
-        },
+        repeat: Infinity,
+        duration: 25,
+        ease: "linear",
       },
     },
   };
 
-  const cardMarqueeVariants = {
+  const cardMarqueeVariants: Variants = {
     animate: {
-      x: [-2480, 0], // Move from -2512px to 0px
+      x: [-2250, 0], // Keyframes
       transition: {
-        x: {
-          repeat: Infinity,
-          duration: 40, // A slower duration for a calmer feel
-          ease: "linear",
-        },
+        repeat: Infinity,
+        duration: 40,
+        ease: "linear",
       },
     },
   };
@@ -90,29 +85,29 @@ export default function MoreAbout() {
               animate="animate"
             >
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/images/seagull.jpg" />
-              <CardImage image="/images/bear.jpg" />
-              <CardImage image="/images/bunny.jpg" />
+              <CardImage image="/hobbies/seagull.jpg" />
+              <CardImage image="/hobbies/bear.jpg" />
+              <CardImage image="/hobbies/bunny.jpg" />
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/images/crab.jpg" />
-              <CardImage image="/images/dog.jpg" />
-              <CardImage image="/images/ladybug.jpg" />
+              <CardImage image="/hobbies/crab.jpg" />
+              <CardImage image="/hobbies/dog.jpg" />
+              {/* <CardImage image="/hobbies/ladybug.jpg" /> */}
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/images/duck.jpg" />
-              <CardImage image="/images/tucan.jpg" />
-              <CardImage image="/images/fox.jpg" />
+              <CardImage image="/hobbies/duck.jpg" />
+              <CardImage image="/hobbies/tucan.jpg" />
+              <CardImage image="/hobbies/fox.jpg" />
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/images/seagull.jpg" />
-              <CardImage image="/images/bear.jpg" />
-              <CardImage image="/images/bunny.jpg" />
+              <CardImage image="/hobbies/seagull.jpg" />
+              <CardImage image="/hobbies/bear.jpg" />
+              <CardImage image="/hobbies/bunny.jpg" />
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/images/crab.jpg" />
-              <CardImage image="/images/dog.jpg" />
-              <CardImage image="/images/ladybug.jpg" />
+              <CardImage image="/hobbies/crab.jpg" />
+              <CardImage image="/hobbies/dog.jpg" />
+              {/* <CardImage image="/hobbies/ladybug.jpg" /> */}
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/images/duck.jpg" />
-              <CardImage image="/images/tucan.jpg" />
-              <CardImage image="/images/fox.jpg" />
+              <CardImage image="/hobbies/duck.jpg" />
+              <CardImage image="/hobbies/tucan.jpg" />
+              <CardImage image="/hobbies/fox.jpg" />
             </motion.div>
           </motion.div>
         )}
