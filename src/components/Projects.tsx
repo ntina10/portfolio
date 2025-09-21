@@ -21,16 +21,16 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <h2 className="title pt-10 pb-20 pl-40">My Projects</h2>
-      <div className="max-w-3/4 mx-auto -space-y-14">
+      <h2 className="title pt-10 pb-20 px-20 lg:px-40">My Projects</h2>
+      <div className="max-w-8/9 lg:max-w-4/5 mx-auto -space-y-14">
         <ProjectFolder
           title="NNEDS"
           color="bg-emerald-200"
           tabPosition="left-1/8"
-          isOpen={openFolder === "NNEDS"}
-          onToggle={() =>
-            setOpenFolder(openFolder === "NNEDS" ? null : "NNEDS")
-          }
+          // isOpen={openFolder === "NNEDS"}
+          // onToggle={() =>
+          //   setOpenFolder(openFolder === "NNEDS" ? null : "NNEDS")
+          // }
         >
           <div className="space-y-4 text-black/70">
             <p>
@@ -154,14 +154,14 @@ const Projects = () => {
           title="Ambulance Adventure"
           color="bg-blue-200"
           tabPosition="left-2/8"
-          isOpen={openFolder === "Ambulance Adventure"}
-          onToggle={() =>
-            setOpenFolder(
-              openFolder === "Ambulance Adventure"
-                ? null
-                : "Ambulance Adventure"
-            )
-          }
+          // isOpen={openFolder === "Ambulance Adventure"}
+          // onToggle={() =>
+          //   setOpenFolder(
+          //     openFolder === "Ambulance Adventure"
+          //       ? null
+          //       : "Ambulance Adventure"
+          //   )
+          // }
         >
           <div className="space-y-4 text-black/70">
             <p>
@@ -259,10 +259,10 @@ const Projects = () => {
           title="Moodle"
           color="bg-blue-300"
           tabPosition="left-3/8"
-          isOpen={openFolder === "Moodle"}
-          onToggle={() =>
-            setOpenFolder(openFolder === "Moodle" ? null : "Moodle")
-          }
+          // isOpen={openFolder === "Moodle"}
+          // onToggle={() =>
+          //   setOpenFolder(openFolder === "Moodle" ? null : "Moodle")
+          // }
         >
           <div className="space-y-4 text-black/70">
             <p>
@@ -336,10 +336,10 @@ const Projects = () => {
           title="CheckIt"
           color="bg-violet-200"
           tabPosition="left-4/8"
-          isOpen={openFolder === "CheckIt"}
-          onToggle={() =>
-            setOpenFolder(openFolder === "CheckIt" ? null : "CheckIt")
-          }
+          // isOpen={openFolder === "CheckIt"}
+          // onToggle={() =>
+          //   setOpenFolder(openFolder === "CheckIt" ? null : "CheckIt")
+          // }
         >
           <div className="space-y-4 text-black/70">
             <p>
@@ -391,10 +391,10 @@ const Projects = () => {
           title="YellowPages"
           color="bg-purple-300"
           tabPosition="left-5/8"
-          isOpen={openFolder === "YellowPages"}
-          onToggle={() =>
-            setOpenFolder(openFolder === "YellowPages" ? null : "YellowPages")
-          }
+          // isOpen={openFolder === "YellowPages"}
+          // onToggle={() =>
+          //   setOpenFolder(openFolder === "YellowPages" ? null : "YellowPages")
+          // }
         >
           <div className="space-y-4 text-black/70">
             <p>

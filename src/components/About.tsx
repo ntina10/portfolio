@@ -3,14 +3,14 @@ type SkillTagProps = {
 };
 
 const SkillTag = ({ name }: SkillTagProps) => (
-  <div className="skilltag rounded-full inline-block border border-stone-400 px-4 py-1 h-8 text-sm">
+  <div className="skilltag rounded-full inline-block border border-stone-400 px-4 py-1 h-9">
     {name}
   </div>
 );
 
 const About = () => {
   return (
-    <div id="about" className="pl-40 pr-25">
+    <div id="about" className="pl-20 lg:pl-40 pr-15 lg:pr-25">
       <h2 className="py-10">About me</h2>
       <div className="hidden md:block md:col-span-3" />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12">

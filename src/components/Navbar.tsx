@@ -2,7 +2,7 @@ const Navbar = () => {
   return (
     <nav className="navbar flex justify-between items-center p-10">
       <div className="nav-home">
-        <p>Konstantina Freri</p>
+        <a href="#">Konstantina Freri</a>
       </div>
       <div className="nav-links ">
         <ul className="flex justify-center items-center gap-8">

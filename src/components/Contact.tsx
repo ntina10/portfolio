@@ -21,7 +21,7 @@ const contactLinks = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="pl-40">
+    <section id="contact" className="px-20 lg:px-40">
       <h2 className="pb-10">Contact Me</h2>
       <div className="flex justify-start items-center gap-8 md:gap-12">
         {contactLinks.map((link) => (
