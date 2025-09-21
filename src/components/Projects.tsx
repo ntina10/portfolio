@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import ProjectFolder from "./ProjectFolder";
 
 const ImagesGallery = ({ images }: { images: string[] }) => {
@@ -17,7 +17,7 @@ const ImagesGallery = ({ images }: { images: string[] }) => {
 };
 
 const Projects = () => {
-  const [openFolder, setOpenFolder] = useState<string | null>(null);
+  // const [openFolder, setOpenFolder] = useState<string | null>(null);
 
   return (
     <section id="projects">
