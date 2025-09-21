@@ -127,7 +127,7 @@ const Projects = () => {
               ]}
             ></ImagesGallery>
 
-            <h3 className="pb-4">Feature 4: Role-based access control</h3>
+            <h3 className="pb-4">Feature 4: Role-based Access Control</h3>
             <p>
               <b>The Goal:</b> The platform lacked a way to manage user
               permissions, making it impossible to restrict access to sensitive
@@ -178,7 +178,7 @@ const Projects = () => {
             </p>
             <br />
             <p>
-              <i>My team:</i> Georgia Tsoukala
+              <i>Team members:</i> Georgia Tsoukala
             </p>
             <br />
             <div className="flex gap-4 py-4">
@@ -193,7 +193,7 @@ const Projects = () => {
                 className="rounded-md w-[calc((100%-2rem)/2)]"
               />
             </div>
-            <h3>How to play</h3>
+            <h3>How To Play</h3>
             <p>
               The child drives the ambulance around the path. When it enters a
               room, they can press the buttons located there and listen to
@@ -201,7 +201,7 @@ const Projects = () => {
               and can be played on reverse so that children can feel free to
               explore it however they want.
             </p>
-            <h3 className="pt-4">How it works</h3>
+            <h3 className="pt-4">How It Works</h3>
             <p>
               The system incorporates 2 arduino boards and 5 rfid readers. The
               first arduino board (arduino A) controls the RFID readers and an
@@ -293,7 +293,7 @@ const Projects = () => {
                 "/projects/review.jpg",
               ]}
             ></ImagesGallery>
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <p>
               <b>Facial Emotion Recognition:</b> I implemented a pipeline that
               uses the phone's camera to capture a photo of the user. This image
@@ -343,14 +343,47 @@ const Projects = () => {
         >
           <div className="space-y-4 text-black/70">
             <p>
-              Developed a complete brand identity for a local startup, including
-              logo design, color palette, and typography guidelines.
+              As a project for my Master's course, Personal Data Interactions, I
+              developed "Check It", a mobile app built with React Native and
+              Firebase that enables users to define personal goals, check off
+              daily achievements based on their personal satisfaction, and track
+              their mood. Through interactive visualizations, users can explore
+              the powerful connection between their accomplishments and their
+              emotional well-being.
             </p>
-            <img
-              src="/path/to/your/branding-image.jpg"
-              alt="Branding project moodboard"
-              className="rounded-md shadow-inner"
-            />
+            <br />
+            <p>
+              <i>Technologies:</i> React Native, Firebase, Figma
+            </p>
+            <br />
+            <ImagesGallery
+              images={[
+                "/projects/splash.png",
+                "/projects/setup.jpg",
+                "/projects/home.png",
+                "/projects/checklist.jpg",
+                "/projects/checklist2.jpg",
+                "/projects/viz1.jpg",
+                "/projects/viz2.jpg",
+                "/projects/viz3.jpg",
+              ]}
+            ></ImagesGallery>
+            <p>
+              <b>Full-Stack Mobile Development:</b> Designed and built a
+              complete, cross-platform mobile app using React Native and Expo
+              for the frontend. For the backend, I integrated Firebase to handle
+              user authentication and database management. <br />
+              <b>Interactive Data Visualization:</b> Implemented a "Reflections"
+              page featuring several charts, including a scatter plot showing
+              the mood-to-goal-completion ratio and a pie chart for goal
+              distribution, to help users gain deeper self-awareness. <br />
+              <b>Usability Testing & Analysis:</b> Conducted a week-long "Wizard
+              of Oz" experiment with multiple user groups to test the impact of
+              push notifications. Ran "Think Aloud" testing sessions to evaluate
+              the app's interface and core concept. The user experiments
+              confirmed that achieving more goals has a direct, positive linear
+              relationship with improved mood.
+            </p>
           </div>
         </ProjectFolder>
 
@@ -365,14 +398,55 @@ const Projects = () => {
         >
           <div className="space-y-4 text-black/70">
             <p>
-              Developed a complete brand identity for a local startup, including
-              logo design, color palette, and typography guidelines.
+              As a project for one of my Master's courses, my team and I
+              developed "Yellow Pages", a full-stack web app that centralizes a
+              firm's collective LinkedIn connections to make them easily
+              searchable. Venture Capital firms depend on their networks, but
+              existing tools were inefficient and had confusing interfaces. Our
+              team was divided into frontend and backend development roles. As a
+              member of the two-person frontend team, I was responsible for
+              designing and building an intuitive and highly usable interface in
+              React that transforms how investors filter and analyze network
+              data.
             </p>
-            <img
-              src="/path/to/your/branding-image.jpg"
-              alt="Branding project moodboard"
-              className="rounded-md"
-            />
+            <br />
+            <p>
+              <i>Technologies:</i> React, Figma, Material UI
+            </p>
+            <br />
+            <p>
+              <i>Team members:</i> Artemis Doumeni, Giannis Tselios, Georgia
+              Tsoukala
+            </p>
+            <ImagesGallery
+              images={[
+                "/projects/finalapp_filters.png",
+                "/projects/finalapp_with data.png",
+                "/projects/finalapp_drawer.png",
+                "/projects/finalapp_search.png",
+                "/projects/finalapp_search with data.png",
+              ]}
+            ></ImagesGallery>
+            <h3>Main Features</h3>
+            <p>
+              <b>Intuitive Filtering System:</b> I co-designed and implemented
+              the complete user-facing filtering system. We organized complex
+              search options into logical tabs ("Person," "Company," and
+              "General"), for clarity and control over the search process, based
+              on user testing. <br />
+              <b>Dynamic Information Display:</b> To solve the problem of
+              information overload from cluttered tables in a previous tool, I
+              designed and implemented a results view with a clean data table
+              and a collapsible "drawer". This allows users to see a clean
+              overview and then access a contact's full work history and details
+              with a single click. <br />
+              <b>Iterative UI/UX Development:</b> I played a key role in driving
+              the UI design process from initial Figma mockups to the final
+              React implementation. Using feedback from user testing, I helped
+              refine key components like the filter layout and the information
+              hierarchy to ensure the final product was both powerful and easy
+              to navigate for non-technical users.
+            </p>
           </div>
         </ProjectFolder>
 
