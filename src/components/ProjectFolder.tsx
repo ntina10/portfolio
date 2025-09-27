@@ -40,7 +40,11 @@ export default function ProjectFolder(props: Props) {
       onClick={() => setIsOpen(!isOpen)}
       className="group pointer-events-none"
     >
-      <div className="relative pt-10 transition-transform duration-300 group-hover:-translate-y-2">
+      <div
+        className={`relative pt-10 transition-all duration-300 ${
+          !isOpen ? "group-hover:-translate-y-2" : ""
+        }`}
+      >
         {/* The Tab */}
         <div
           className={`cursor-pointer absolute top-0 ${tabPosition} flex items-center  pointer-events-auto`}

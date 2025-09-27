@@ -10,7 +10,10 @@ const SkillTag = ({ name }: SkillTagProps) => (
 
 const About = () => {
   return (
-    <div id="about" className="pl-20 lg:pl-40 pr-15 lg:pr-25">
+    <div
+      id="about"
+      className="pl-20 lg:pl-40 pr-15 lg:pr-25 relative z-1 bg-[#faf6f0] mt-[-0.5rem]"
+    >
       <h2 className="py-10">About me</h2>
       <div className="hidden md:block md:col-span-3" />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12">
