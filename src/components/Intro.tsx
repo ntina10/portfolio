@@ -6,11 +6,11 @@ const Intro = () => {
   return (
     <h1 className="intro px-20 lg:px-40 py-10 lg:py-30 xl:max-w-5/6">
       Hello.
-      <Greeting /> My name is Konstantina . <br /> As a{" "}
+      <Greeting /> My name is Konstantina. <br /> As a{" "}
       <HoverHighlight pathData={data.software}>
-        software developer
-      </HoverHighlight>
-      , I love bringing{" "}
+        software developer,
+      </HoverHighlight>{" "}
+      I love bringing{" "}
       <HoverHighlight pathData={data.ideas_to_life}>
         ideas to life
       </HoverHighlight>{" "}

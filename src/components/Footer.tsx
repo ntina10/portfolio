@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="footer flex justify-between items-center p-10 pt-25">
+    <footer className="footer flex justify-between items-center p-10 pt-25 gap-8">
       <p>
         &copy; {new Date().getFullYear()} Konstantina Freri. All rights
         reserved.

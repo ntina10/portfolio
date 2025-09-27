@@ -22,15 +22,14 @@ const Contact = () => {
   return (
     <section id="contact" className="px-20 lg:px-40">
       <h2 className="pb-10">Contact Me</h2>
-      <div className="flex justify-start items-center gap-8 md:gap-12">
+      <div className="flex flex-column justify-between md:justify-start items-center gap-4 md:gap-12">
         {contactLinks.map((link) => (
           <a
             key={link.name}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex justify-center items-center w-24 h-24 rounded-full bg-purple-200 
-             transition-all duration-300"
+            className="group flex justify-center items-center w-16 md:w-24 h-16 md:h-24 rounded-full bg-purple-200"
           >
             <div className="group-hover:scale-150 group-hover:text-indigo-600 transition-all duration-300">
               {link.icon}

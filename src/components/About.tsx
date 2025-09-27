@@ -35,7 +35,7 @@ const About = () => {
             {/* First Team Column */}
             <div>
               <p>NNEDS Team</p>
-              <ul className="list-disc pl-5 mt-2 space-y-2 text-stone-700">
+              <ul className="list-disc pl-5 mt-2 space-y-2">
                 <li>
                   Developed and enhanced features on a Django and Vue3 platform.
                 </li>
@@ -54,7 +54,7 @@ const About = () => {
             {/* Second Team Column */}
             <div>
               <p>PSChat Team</p>
-              <ul className="list-disc pl-5 mt-2 space-y-2 text-stone-700">
+              <ul className="list-disc pl-5 mt-2 space-y-2">
                 <li>
                   Acted as the primary contact for a custom chatbot creation use
                   case.

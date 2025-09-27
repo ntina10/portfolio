@@ -26,7 +26,7 @@ const Projects = () => {
           title="NNEDS"
           color="bg-emerald-200"
           textColor="#A7F3D0"
-          tabPosition="left-1/8"
+          tabPosition="md:left-1/8"
           // isOpen={openFolder === "NNEDS"}
           // onToggle={() =>
           //   setOpenFolder(openFolder === "NNEDS" ? null : "NNEDS")
@@ -154,7 +154,7 @@ const Projects = () => {
           title="Ambulance Adventure"
           color="bg-blue-200"
           textColor="#BFDBFE"
-          tabPosition="left-2/8"
+          tabPosition="md:left-2/8"
           // isOpen={openFolder === "Ambulance Adventure"}
           // onToggle={() =>
           //   setOpenFolder(
@@ -260,7 +260,7 @@ const Projects = () => {
           title="Moodle"
           color="bg-blue-300"
           textColor="#93C5FD"
-          tabPosition="left-3/8"
+          tabPosition="md:left-3/8"
           // isOpen={openFolder === "Moodle"}
           // onToggle={() =>
           //   setOpenFolder(openFolder === "Moodle" ? null : "Moodle")
@@ -338,7 +338,7 @@ const Projects = () => {
           title="CheckIt"
           color="bg-violet-200"
           textColor="#DDD6FE"
-          tabPosition="left-4/8"
+          tabPosition="md:left-4/8"
           // isOpen={openFolder === "CheckIt"}
           // onToggle={() =>
           //   setOpenFolder(openFolder === "CheckIt" ? null : "CheckIt")
@@ -394,7 +394,7 @@ const Projects = () => {
           title="YellowPages"
           color="bg-purple-300"
           textColor="#DAB2FF"
-          tabPosition="left-5/8"
+          tabPosition="md:left-5/8"
           // isOpen={openFolder === "YellowPages"}
           // onToggle={() =>
           //   setOpenFolder(openFolder === "YellowPages" ? null : "YellowPages")

@@ -47,7 +47,7 @@ export default function ProjectFolder(props: Props) {
       >
         {/* The Tab */}
         <div
-          className={`cursor-pointer absolute top-0 ${tabPosition} flex items-center  pointer-events-auto`}
+          className={`cursor-pointer absolute top-0 left-10 ${tabPosition} flex items-center  pointer-events-auto`}
         >
           <div
             className={`flex items-center px-4 rounded-t-sm rounded-tr-none ${color} `}
