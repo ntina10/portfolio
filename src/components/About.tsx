@@ -136,6 +136,7 @@ const About = () => {
           <SkillTag name="React Native" />
           <SkillTag name="JavaScript" />
           <SkillTag name="Flutter" />
+          <SkillTag name="Java" />
           <SkillTag name="Python" />
           <SkillTag name="Django" />
           <SkillTag name="Git" />
