@@ -1,10 +1,37 @@
 import HoverHighlight from "./HoverHighlight";
+import { motion, type Variants } from "framer-motion";
 import data from "../assets/data.json";
 import Greeting from "./Greeting";
 
+// const containerVariants: Variants = {
+//   visible: {
+//     transition: {
+//       staggerChildren: 0.4,
+//     },
+//   },
+//   hidden: {
+//     transition: {
+//       staggerChildren: 0.4,
+//       staggerDirection: -1,
+//     },
+//   },
+// };
+
 const Intro = () => {
   return (
-    <h1 className="ovo text-[24px] md:text-[40px] px-20 lg:px-40 py-10 lg:py-30 xl:max-w-5/6">
+    <motion.h1
+      className="ovo text-[24px] md:text-[40px] px-20 lg:px-40 py-10 lg:py-30 xl:max-w-5/6"
+      // variants={containerVariants}
+      // initial="hidden"
+      // animate={["visible", "hidden", "visible", "hidden"]}
+      // transition={{
+      //   duration: 7.2,
+      //   // ease: "easeInOut",
+      //   repeat: Infinity,
+      //   repeatType: "reverse",
+      //   repeatDelay: 1,
+      // }}
+    >
       Hello!
       <Greeting /> My name is Konstantina. <br /> As a{" "}
       <HoverHighlight pathData={data.software}>
@@ -27,7 +54,7 @@ const Intro = () => {
       experiences that make a{" "}
       <HoverHighlight pathData={data.meaningful}>meaningful</HoverHighlight>{" "}
       impact.
-    </h1>
+    </motion.h1>
   );
 };
 

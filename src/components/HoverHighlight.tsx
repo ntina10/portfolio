@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+// import { useState, useRef, useEffect } from "react";
 
 interface Path {
   path: string;
   color?: string;
   height: string;
   viewBox: string;
+  delay: number;
 }
 
 interface Props {
@@ -15,39 +16,39 @@ interface Props {
 
 export default function HoverHighlight(props: Props) {
   const { children, pathData } = props;
-  const { path, color, height, viewBox } = pathData;
+  const { path, color, height, viewBox, delay } = pathData;
 
-  const [hovered, setHovered] = useState(false);
-  const timerRef = useRef<number | null>(null);
+  // const [hovered, setHovered] = useState(false);
+  // const timerRef = useRef<number | null>(null);
 
-  const handleMouseEnter = () => {
-    // If there's a pending timer to set hovered to false, clear it
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-    setHovered(true);
-  };
+  // const handleMouseEnter = () => {
+  //   // If there's a pending timer to set hovered to false, clear it
+  //   if (timerRef.current) {
+  //     clearTimeout(timerRef.current);
+  //     timerRef.current = null;
+  //   }
+  //   setHovered(true);
+  // };
 
-  const handleMouseLeave = () => {
-    timerRef.current = window.setTimeout(() => {
-      setHovered(false);
-    }, 3000);
-  };
+  // const handleMouseLeave = () => {
+  //   timerRef.current = window.setTimeout(() => {
+  //     setHovered(false);
+  //   }, 3000);
+  // };
 
-  useEffect(() => {
-    return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     if (timerRef.current) {
+  //       clearTimeout(timerRef.current);
+  //     }
+  //   };
+  // }, []);
 
   return (
     <span
       className="relative inline-block"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
     >
       {children}
       {/* Animated underline */}
@@ -62,9 +63,36 @@ export default function HoverHighlight(props: Props) {
           stroke={color || "#4499FB"}
           fill="none"
           strokeWidth={4}
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: hovered ? 1 : 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: {
+              pathLength: 1,
+              transition: {
+                pathLength: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  repeatDelay: 4,
+                  delay: delay,
+                },
+              },
+            },
+            hidden: {
+              pathLength: 0,
+              transition: {
+                pathLength: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatDelay: 4,
+
+                  delay: delay,
+                },
+              },
+            },
+          }}
         />
       </motion.svg>
     </span>
