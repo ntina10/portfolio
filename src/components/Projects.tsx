@@ -20,12 +20,13 @@ const Projects = () => {
 
   return (
     <section id="projects" className="bg-[#f2ece1]">
-      <h2 className="chivo text-xl pt-10 pb-20 px-20 lg:px-40">My Projects</h2>
+      <h2 className="ovo text-[24px] md:text-4xl pt-10 pb-20 px-20 lg:px-40">
+        My Projects
+      </h2>
       <div className="max-w-8/9 lg:max-w-4/5 mx-auto -space-y-14">
         <ProjectFolder
           title="NNEDS"
           color="bg-emerald-200"
-          textColor="#A7F3D0"
           tabPosition="md:left-1/8"
           // isOpen={openFolder === "NNEDS"}
           // onToggle={() =>
@@ -153,7 +154,6 @@ const Projects = () => {
         <ProjectFolder
           title="Ambulance Adventure"
           color="bg-blue-200"
-          textColor="#BFDBFE"
           tabPosition="md:left-2/8"
           // isOpen={openFolder === "Ambulance Adventure"}
           // onToggle={() =>
@@ -259,7 +259,6 @@ const Projects = () => {
         <ProjectFolder
           title="Moodle"
           color="bg-blue-300"
-          textColor="#93C5FD"
           tabPosition="md:left-3/8"
           // isOpen={openFolder === "Moodle"}
           // onToggle={() =>
@@ -337,7 +336,6 @@ const Projects = () => {
         <ProjectFolder
           title="CheckIt"
           color="bg-violet-200"
-          textColor="#DDD6FE"
           tabPosition="md:left-4/8"
           // isOpen={openFolder === "CheckIt"}
           // onToggle={() =>
@@ -393,7 +391,6 @@ const Projects = () => {
         <ProjectFolder
           title="YellowPages"
           color="bg-purple-300"
-          textColor="#DAB2FF"
           tabPosition="md:left-5/8"
           // isOpen={openFolder === "YellowPages"}
           // onToggle={() =>

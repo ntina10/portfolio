@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 interface Props {
   title: string;
   color: string;
-  textColor: string;
   tabPosition: string;
   children: React.ReactNode;
   // isOpen: boolean;
@@ -14,7 +13,7 @@ interface Props {
 export default function ProjectFolder(props: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { title, color, textColor, tabPosition, children } = props;
+  const { title, color, tabPosition, children } = props;
 
   const contentVariants = {
     hidden: {
@@ -35,6 +34,8 @@ export default function ProjectFolder(props: Props) {
     },
   };
 
+  const backgroundColor = color; //isOpen ? "bg-stone-100" : color;
+
   return (
     <div
       onClick={() => setIsOpen(!isOpen)}
@@ -50,11 +51,11 @@ export default function ProjectFolder(props: Props) {
           className={`cursor-pointer absolute top-0 left-10 ${tabPosition} flex items-center  pointer-events-auto`}
         >
           <div
-            className={`flex items-center px-4 rounded-t-sm rounded-tr-none ${color} `}
+            className={`flex items-center px-4 rounded-sm rounded-tr-none  ${backgroundColor} `}
           >
             <h3 className="chivo p-3">{title}</h3>
           </div>
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <svg
               width="30"
               height="48"
@@ -63,15 +64,20 @@ export default function ProjectFolder(props: Props) {
             >
               <path
                 d="M2.5 0.5C1.56112 0.168629 0 0 0 0V50.5H38.5C38.5 50.5 36.9064 50.412 36 50C35.3591 49.7087 35.0391 49.4528 34.5 49C34.3333 48.86 33.7106 48.2106 33.5 48L32.5 47L5.5 2.5C5.5 2.5 4.93595 1.83907 4.5 1.5C3.81071 0.963883 3.32346 0.790632 2.5 0.5Z"
-                fill={textColor}
+                fill={backgroundColor}
               />
             </svg>
+          </div> */}
+          <div className="relative w-12 h-12 overflow-hidden">
+            <div
+              className={`absolute w-18 h-18 ${backgroundColor} rounded-xl rotate-45 -translate-x-[36px] translate-y-[10px] `}
+            ></div>
           </div>
         </div>
 
         {/* The Main Body */}
         <div
-          className={`pt-13 px-10 lg:px-30 pb-15 rounded-t-md ${color} pointer-events-auto`}
+          className={`pt-13 px-10 lg:px-30 pb-15 rounded-t-md ${backgroundColor} pointer-events-auto`}
         >
           {/* Expandable Content Area */}
           <AnimatePresence>

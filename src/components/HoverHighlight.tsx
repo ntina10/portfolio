@@ -18,38 +18,8 @@ export default function HoverHighlight(props: Props) {
   const { children, pathData } = props;
   const { path, color, height, viewBox, delay } = pathData;
 
-  // const [hovered, setHovered] = useState(false);
-  // const timerRef = useRef<number | null>(null);
-
-  // const handleMouseEnter = () => {
-  //   // If there's a pending timer to set hovered to false, clear it
-  //   if (timerRef.current) {
-  //     clearTimeout(timerRef.current);
-  //     timerRef.current = null;
-  //   }
-  //   setHovered(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   timerRef.current = window.setTimeout(() => {
-  //     setHovered(false);
-  //   }, 3000);
-  // };
-
-  // useEffect(() => {
-  //   return () => {
-  //     if (timerRef.current) {
-  //       clearTimeout(timerRef.current);
-  //     }
-  //   };
-  // }, []);
-
   return (
-    <span
-      className="relative inline-block"
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
-    >
+    <span className="relative inline-block">
       {children}
       {/* Animated underline */}
       <motion.svg
@@ -74,7 +44,7 @@ export default function HoverHighlight(props: Props) {
                   ease: "easeInOut",
                   repeat: Infinity,
                   repeatType: "reverse",
-                  repeatDelay: 4,
+                  repeatDelay: 7,
                   delay: delay,
                 },
               },
@@ -86,8 +56,7 @@ export default function HoverHighlight(props: Props) {
                   duration: 2,
                   ease: "easeInOut",
                   repeat: Infinity,
-                  repeatDelay: 4,
-
+                  repeatDelay: 7,
                   delay: delay,
                 },
               },

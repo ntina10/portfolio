@@ -21,7 +21,7 @@ const contactLinks = [
 const Contact = () => {
   return (
     <section id="contact" className="px-20 lg:px-40">
-      <h2 className="chivo pt-25 pb-10 text-2xl">Let's chat!</h2>
+      <h2 className="ovo text-[24px] md:text-4xl pt-25 pb-10">Let's chat!</h2>
       <div className="flex flex-column justify-between md:justify-start items-center gap-4 md:gap-12">
         {contactLinks.map((link) => (
           <a

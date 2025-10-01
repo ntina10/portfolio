@@ -3,18 +3,32 @@ type SkillTagProps = {
 };
 
 const SkillTag = ({ name }: SkillTagProps) => (
-  <div className="ovo rounded-full inline-block border border-stone-400 px-4 py-1 h-9">
+  <div className="ovo rounded-full text-lg inline-block border border-stone-400 px-4 py-1 h-10">
     {name}
   </div>
 );
 
 const About = () => {
+  const skills = [
+    "Vue",
+    "React",
+    "React Native",
+    "JavaScript",
+    "Flutter",
+    "Java",
+    "Python",
+    "Django",
+    "Git",
+    "Figma",
+    "Fusion360",
+  ];
+
   return (
     <div
       id="about"
       className="pl-20 lg:pl-40 pr-15 lg:pr-25 relative z-1 bg-[#faf6f0] mt-[-0.5rem]"
     >
-      <h2 className="chivo text-xl pt-10 pb-20">About me</h2>
+      <h2 className="ovo text-[24px] md:text-4xl pt-10 pb-20">About me</h2>
       <div className="hidden md:block md:col-span-3" />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12">
         {/* SECTION 1: Frontend Developer Experience */}
@@ -137,17 +151,9 @@ const About = () => {
 
         {/* Right Column */}
         <div className="md:col-span-3 gap-3 flex flex-wrap">
-          <SkillTag name="Vue" />
-          <SkillTag name="React" />
-          <SkillTag name="React Native" />
-          <SkillTag name="JavaScript" />
-          <SkillTag name="Flutter" />
-          <SkillTag name="Java" />
-          <SkillTag name="Python" />
-          <SkillTag name="Django" />
-          <SkillTag name="Git" />
-          <SkillTag name="Figma" />
-          <SkillTag name="Fusion 360" />
+          {skills.map((skill) => (
+            <SkillTag name={skill} />
+          ))}
         </div>
       </div>
     </div>
