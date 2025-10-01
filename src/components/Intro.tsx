@@ -8,9 +8,9 @@ const Intro = () => {
       Hello!
       <Greeting /> My name is Konstantina. <br /> As a{" "}
       <HoverHighlight pathData={data.software}>
-        software developer,
-      </HoverHighlight>{" "}
-      I love bringing{" "}
+        software developer
+      </HoverHighlight>
+      , I love bringing{" "}
       <HoverHighlight pathData={data.ideas_to_life}>
         ideas to life
       </HoverHighlight>{" "}

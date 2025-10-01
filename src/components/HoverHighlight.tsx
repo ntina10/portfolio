@@ -52,7 +52,7 @@ export default function HoverHighlight(props: Props) {
       {children}
       {/* Animated underline */}
       <motion.svg
-        className="absolute left-0 -bottom-2 w-full"
+        className="absolute -left-1 -bottom-2 w-[102%]"
         height={height}
         viewBox={viewBox}
         preserveAspectRatio="none"

@@ -19,7 +19,7 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12">
         {/* SECTION 1: Frontend Developer Experience */}
         {/* Left Column */}
-        <div className="md:text-left md:mr-24 font-mono">
+        <div className="md:text-left xl:mr-24 md:mr-12 font-mono">
           <h3 className="sticky top-16">
             I worked as a Frontend Developer at Novo Nordisk.
           </h3>
@@ -71,7 +71,7 @@ const About = () => {
 
         {/* SECTION 2: Android Developer Experience */}
         {/* Left Column */}
-        <div className="md:text-left md:mr-24 font-mono">
+        <div className="md:text-left xl:mr-24 md:mr-12 font-mono">
           <h3 className="sticky top-16">
             I worked as an Android Developer intern.
           </h3>
@@ -103,9 +103,9 @@ const About = () => {
 
         {/* SECTION 3: Education */}
         {/* Left Column */}
-        <div className="md:text-left md:mr-24 font-mono">
+        <div className="md:text-left xl:mr-24 md:mr-12 font-mono">
           <h3 className="sticky top-16">
-            I earned a bachelor's in Electrical and Computer Engineering and a
+            I got a bachelor's in Electrical and Computer Engineering and a
             master's in Human-Centered AI.
           </h3>
         </div>
@@ -128,7 +128,7 @@ const About = () => {
 
         {/* SECTION 4: Skills & Tools */}
         {/* Left Column */}
-        <div className="md:text-left md:mr-24 font-mono">
+        <div className="md:text-left xl:mr-24 md:mr-12 font-mono">
           <h3 className="sticky top-16">
             I have built projects in several languages and used many different
             tools.
