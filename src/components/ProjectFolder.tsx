@@ -52,7 +52,7 @@ export default function ProjectFolder(props: Props) {
           <div
             className={`flex items-center px-4 rounded-t-sm rounded-tr-none ${color} `}
           >
-            <h3 className="p-3">{title}</h3>
+            <h3 className="chivo p-3">{title}</h3>
           </div>
           <div className="flex items-center">
             <svg

@@ -19,8 +19,8 @@ const Projects = () => {
   // const [openFolder, setOpenFolder] = useState<string | null>(null);
 
   return (
-    <section id="projects">
-      <h2 className="title pt-10 pb-20 px-20 lg:px-40">My Projects</h2>
+    <section id="projects" className="bg-[#f2ece1]">
+      <h2 className="chivo text-xl pt-10 pb-20 px-20 lg:px-40">My Projects</h2>
       <div className="max-w-8/9 lg:max-w-4/5 mx-auto -space-y-14">
         <ProjectFolder
           title="NNEDS"
@@ -44,7 +44,7 @@ const Projects = () => {
               <i>Technologies:</i> Vue.js, Figma, Azure DevOps
             </p>
             <br />
-            <h3 className="pb-4">
+            <h3 className="chivo pb-4">
               Feature 1: Centralized User Support & Feedback
             </h3>
             <p>
@@ -71,7 +71,7 @@ const Projects = () => {
               ]}
             ></ImagesGallery>
 
-            <h3 className="pb-4">
+            <h3 className="chivo pb-4">
               Feature 2: Interactive Data Point Annotation
             </h3>
             <p>
@@ -100,7 +100,7 @@ const Projects = () => {
               ]}
             ></ImagesGallery>
 
-            <h3 className="pb-4">
+            <h3 className="chivo pb-4">
               Feature 3: UI/UX Redesign with a New Design System
             </h3>
             <p>
@@ -127,7 +127,7 @@ const Projects = () => {
               ]}
             ></ImagesGallery>
 
-            <h3 className="pb-4">Feature 4: Role-based Access Control</h3>
+            <h3 className="chivo pb-4">Feature 4: Role-based Access Control</h3>
             <p>
               <b>The Goal:</b> The platform lacked a way to manage user
               permissions, making it impossible to restrict access to sensitive
@@ -182,7 +182,7 @@ const Projects = () => {
               <i>Team members:</i> Georgia Tsoukala
             </p>
             <br />
-            <div className="flex gap-4 py-4">
+            <div className="flex gap-4 pt-4">
               <img
                 src="/projects/final_board.jpg"
                 alt="The board of the game"
@@ -194,7 +194,7 @@ const Projects = () => {
                 className="rounded-md w-[calc((100%-2rem)/2)]"
               />
             </div>
-            <h3>How To Play</h3>
+            <h3 className="chivo pt-4">How To Play</h3>
             <p>
               The child drives the ambulance around the path. When it enters a
               room, they can press the buttons located there and listen to
@@ -202,7 +202,7 @@ const Projects = () => {
               and can be played on reverse so that children can feel free to
               explore it however they want.
             </p>
-            <h3 className="pt-4">How It Works</h3>
+            <h3 className="chivo pt-4">How It Works</h3>
             <p>
               The system incorporates 2 arduino boards and 5 rfid readers. The
               first arduino board (arduino A) controls the RFID readers and an
@@ -234,7 +234,7 @@ const Projects = () => {
                 className="rounded-md w-[calc((100%-2rem)/3)]"
               />
             </div>
-            <h3 className="pt-4">The Process</h3>
+            <h3 className="chivo pt-4">The Process</h3>
             <p>
               <b>Human-Centered Research:</b> Conducted on-site research at
               Herlev Hospital, including interviews with nursing staff and
@@ -295,7 +295,7 @@ const Projects = () => {
                 "/projects/review.jpg",
               ]}
             ></ImagesGallery>
-            <h3>How It Works</h3>
+            <h3 className="chivo">How It Works</h3>
             <p>
               <b>Facial Emotion Recognition:</b> I implemented a pipeline that
               uses the phone's camera to capture a photo of the user. This image
@@ -317,7 +317,7 @@ const Projects = () => {
               view, which features a custom audio player for previews and a
               5-star rating system.
             </p>
-            <h3 className="pt-4">Promotional Website</h3>
+            <h3 className="chivo pt-4">Promotional Website</h3>
             <p>
               To showcase the project, I also created a single-page promotional
               website for the app. Check it out{" "}
@@ -431,7 +431,7 @@ const Projects = () => {
                 "/projects/finalapp_search with data.png",
               ]}
             ></ImagesGallery>
-            <h3>Main Features</h3>
+            <h3 className="chivo">Main Features</h3>
             <p>
               <b>Intuitive Filtering System:</b> I co-designed and implemented
               the complete user-facing filtering system. We organized complex

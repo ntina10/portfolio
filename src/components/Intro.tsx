@@ -4,8 +4,8 @@ import Greeting from "./Greeting";
 
 const Intro = () => {
   return (
-    <h1 className="intro text-[24px] md:text-[40px] px-20 lg:px-40 py-10 lg:py-30 xl:max-w-5/6">
-      Hello.
+    <h1 className="ovo text-[24px] md:text-[40px] px-20 lg:px-40 py-10 lg:py-30 xl:max-w-5/6">
+      Hello!
       <Greeting /> My name is Konstantina. <br /> As a{" "}
       <HoverHighlight pathData={data.software}>
         software developer,

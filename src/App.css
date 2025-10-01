@@ -1,50 +1,27 @@
-/* Intro */
+/* Fonts */
 
-h1 {
-  font-family: 'Ovo';
-  /* font-size: 2.5em; */
-  line-height: 1.2;
-}
-
-h2, h3 {
+.chivo {
   font-family: 'Chivo Mono', monospace;
 }
 
-p, li {
+.ovo {
   font-family: 'Ovo', serif;
 }
 
-footer p, nav p, nav li {
-  font-family: 'Chivo Mono', monospace;
-}
+/* Intro */
 
-/* Navbar */
-
-nav {
-  font-family: 'Chivo Mono', monospace;
-  color: #9d5454;
+h1 {
+  line-height: 1.2;
 }
 
 /* Projects */
-
-#projects {
-  background-color: #f2ece1;
-}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Footer */
-
-footer {
-  font-family: 'Chivo Mono', monospace;
-  color: #9d5454;
-}
-
 /* About */
 
 .skilltag {
-  font-family: 'Ovo', serif;
   transition: background-color 0.3s, color 0.3s;
 }

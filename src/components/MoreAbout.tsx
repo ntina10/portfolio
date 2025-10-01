@@ -47,27 +47,27 @@ export default function MoreAbout() {
   };
 
   return (
-    <section id="more-about" className="more-about my-20 bg-[#f2ece1]">
+    <section id="more-about" className="more-about mt-20 bg-[#f2ece1]">
       <div
         className="w-full overflow-hidden cursor-pointer py-4"
         onClick={() => setIsOpen(!isOpen)}
       >
         <motion.div
-          className="flex whitespace-nowrap hover:text-amber-600"
+          className="flex whitespace-nowrap hover:text-amber-600 chivo text-lg py-2"
           variants={textMarqueeVariants}
           animate="animate"
         >
           {/* Render the text multiple times to ensure it fills the screen and loops smoothly */}
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
-          <h2 className="text-lg py-2 pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
+          <h2 className="pr-8">Wanna know more about me?</h2>
         </motion.div>
       </div>
       <AnimatePresence>

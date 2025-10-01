@@ -3,7 +3,7 @@ type SkillTagProps = {
 };
 
 const SkillTag = ({ name }: SkillTagProps) => (
-  <div className="skilltag rounded-full inline-block border border-stone-400 px-4 py-1 h-9">
+  <div className="ovo rounded-full inline-block border border-stone-400 px-4 py-1 h-9">
     {name}
   </div>
 );
@@ -14,7 +14,7 @@ const About = () => {
       id="about"
       className="pl-20 lg:pl-40 pr-15 lg:pr-25 relative z-1 bg-[#faf6f0] mt-[-0.5rem]"
     >
-      <h2 className="py-10">About me</h2>
+      <h2 className="chivo text-xl pt-10 pb-20">About me</h2>
       <div className="hidden md:block md:col-span-3" />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12">
         {/* SECTION 1: Frontend Developer Experience */}
@@ -27,13 +27,13 @@ const About = () => {
 
         {/* Right Column (spans 3 grid columns) */}
         <div className="md:col-span-3">
-          <h3 className="text-lg">Novo Nordisk</h3>
-          <p className="text-sm text-stone-600 mb-8">
+          <h3 className="chivo text-lg text-indigo-700">Novo Nordisk</h3>
+          <p className="ovo text-lg text-indigo-700 pb-6">
             Frontend Developer, 2024-2025
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* First Team Column */}
-            <div>
+            <div className="ovo">
               <p>NNEDS Team</p>
               <ul className="list-disc pl-5 mt-2 space-y-2">
                 <li>
@@ -52,7 +52,7 @@ const About = () => {
             </div>
 
             {/* Second Team Column */}
-            <div>
+            <div className="ovo">
               <p>PSChat Team</p>
               <ul className="list-disc pl-5 mt-2 space-y-2">
                 <li>
@@ -79,9 +79,11 @@ const About = () => {
 
         {/* Right Column */}
         <div className="md:col-span-3">
-          <h3 className="text-lg">Telenavis</h3>
-          <p className="text-sm text-stone-600 mb-4">Android Developer, 2021</p>
-          <ul className="list-disc pl-5 space-y-2">
+          <h3 className="chivo text-lg text-indigo-700">Telenavis</h3>
+          <p className="ovo text-lg text-indigo-700 pb-6">
+            Android Developer, 2021
+          </p>
+          <ul className="ovo list-disc pl-5 space-y-2">
             <li>
               Built a mobile Android app using Java/Kotlin and ARCore to
               estimate cow weight based on body measurements for use in
@@ -109,14 +111,18 @@ const About = () => {
         </div>
 
         {/* Right Column */}
-        <div className="md:col-span-3 space-y-8">
+        <div className="md:col-span-3 space-y-8 text-lg text-indigo-700">
           <div>
-            <h3 className="text-lg">Technical University of Denmark</h3>
-            <p>Human-Centered Artificial Intelligence, 2023-2025</p>
+            <h3 className="chivo">Technical University of Denmark</h3>
+            <p className="ovo">
+              Human-Centered Artificial Intelligence, 2023-2025
+            </p>
           </div>
           <div>
-            <h3 className="text-lg">National Technical University of Athens</h3>
-            <p>Electrical and Computer Engineering, 2017-2022</p>
+            <h3 className="chivo">National Technical University of Athens</h3>
+            <p className="ovo">
+              Electrical and Computer Engineering, 2017-2022
+            </p>
           </div>
         </div>
 
