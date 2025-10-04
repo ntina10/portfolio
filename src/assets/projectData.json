@@ -1,0 +1,160 @@
+[
+  {
+    "id": "nneds",
+    "technologies": ["Vue.js", "Django", "Figma", "Azure DevOps"],
+    "projectTitle": "NNEDS",
+    "description": "As a student frontend developer at Novo Nordisk, I was part of making the developed platform more user-friendly. My job included building four major features: A user support modal, a data point annotation feature, a UX upgrade, and a new admin page for access control.",
+    "content": [
+      {
+        "title": "Feature 1: Centralized User Support & Feedback",
+        "paragraph": "I developed a comprehensive user support modal that provides direct access to user guides and other resources. I implemented a \"Contact Us\" form that integrates with our Azure DevOps workflow so that when users report a bug or request a feature, a work item is automatically created in our ADO backlog.",
+        "images": [
+          "/projects/UserSupport.png",
+          "/projects/UserSupportGuides.png",
+          "/projects/USFormQuestion.png",
+          "/projects/USFormResult.png"
+        ]
+      },
+      {
+        "title": "Feature 2: Interactive Data Point Annotation",
+        "paragraph": "I implemented a graph annotation feature. Users can click on any data point to leave a comment or choose to exclude the point from statistical calculations. A side panel shows an overview of the comments where these can be edited, or deleted.",
+        "images": [
+          "/projects/SPCcomment.png",
+          "/projects/SPChoveringOverComment.png",
+          "/projects/SPCwithCommentFromHistory.png"
+        ]
+      },
+      {
+        "title": "Feature 3: UI/UX Redesign using a new Design System",
+        "paragraph": "I utilized the company's new design system to modernize the platform's look and feel and create a more intuitive user journey. I used Figma to create initial design mockups. Then based on these, I developed a number of reusable and responsive components that made the user interface.",
+        "images": [
+          "/projects/LandingPage.png",
+          "/projects/ExplorePage.png",
+          "/projects/EPwithResults.png"
+        ]
+      },
+      {
+        "title": "Feature 4: Role-based Access Control",
+        "paragraph": "I designed and developed an admin page that makes it possible to restrict access to sensitive data solutions based on a user's role. On this page, administrators can add or remove users from a solution and assign them specific roles.",
+        "images": ["/projects/AdminPage.png", "/projects/AdminPageEdit.png"]
+      }
+    ]
+  },
+  {
+    "id": "ambulanceadventure",
+    "technologies": [
+      "Fusion 360",
+      "Fritzing",
+      "Arduino",
+      "3D Printing",
+      "Laser Cutting"
+    ],
+    "team": ["Georgia Tsoukala"],
+    "projectTitle": "Ambulance Adventure",
+    "description": "For my Master's thesis, I tackled the challenge of reducing anxiety for children aged 4-7 in the Pediatric Emergency Department at Herlev Hospital. The result was \"Ambulance Adventure,\" a fully functional, wall-mounted board game that familiarizes children with the hospital journey through playful exploration.",
+    "content": [
+      {
+        "title": "How To Play",
+        "paragraph": "The child drives the ambulance around a path that goes through the rooms of the PED. When the ambulance enters a room, the buttons located there get activated and by pressing them kids can listen to information regarding the depicted item.",
+        "images": [
+          "/projects/final_board.jpg",
+          "/projects/electronics_inside.jpg"
+        ]
+      },
+      {
+        "title": "How It Works",
+        "paragraph": "The system incorporates 2 Arduino boards,  5 RFID readers and an MP3 player. An RFID tag is attached to the bottom of the ambulance so that it gets scanned when the car enters a room."
+      },
+      {
+        "title": "The process",
+        "paragraph": "To start with, on-site research was conducted at Herlev Hospital to define the problem and user needs. Iterative prototype led to the final design of the game which was modeled in Fusion 360 and built using laser-cutting and 3D printing. Finally, a mixed-methods evaluation was performed to validate the impact of the game.",
+        "images": [
+          "/projects/test_subject.jpg",
+          "/projects/nurse_playing.jpg",
+          "/projects/me.jpeg"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "moodle",
+    "technologies": ["Flutter", "Flask", "Py-Feat", "Spotify API"],
+    "projectTitle": "Moodle",
+    "description": "For my diploma thesis, I developed \"Moodle\", an Android application where a user can take a selfie and instantly receive a curated playlist that matches their mood. I was responsible for bringing a complete UI/UX design to life, building the mobile app, creating a backend API for the machine learning component, and integrating with the Spotify API.",
+    "content": [
+      {
+        "title": "How It Works",
+        "paragraph": "The system first prompts the user to select up to five of their favorite music genres. Then the phone's camera is used to capture a photo of the user. This image is sent to the Python API, which analyzes the facial expression and detects an emotion. This emotion is mapped to a specific range of valence (musical positiveness) and energy values, which along with the selected genres, are sent to the Spotify API's to generate a unique and mood-appropriate list of songs!",
+        "images": [
+          "/projects/onboarding.jpg",
+          "/projects/vibes.jpg",
+          "/projects/intro.jpg",
+          "/projects/countdown.jpg",
+          "/projects/selfie.jpg",
+          "/projects/mood_result.jpg",
+          "/projects/analytics.jpg",
+          "/projects/music_results.jpg",
+          "/projects/review.jpg"
+        ]
+      },
+      {
+        "title": "Features",
+        "paragraph": "The UI implementation that was in collaboration with a UX designer, included building the onboarding carousel, genre selection screen, camera interface, and the final playlist view, which features a custom audio player for previews and a 5-star rating system."
+      },
+      {
+        "title": "Promotional Website",
+        "paragraph": "To showcase the project, I also created a single-page promotional website for the app.",
+        "imageButton": {
+          "image": "/projects/moodle_page.png",
+          "link": "https://ntina10.github.io/Moodle/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "checkit",
+    "technologies": ["React Native", "Firebase", "Figma"],
+    "projectTitle": "Check It",
+    "description": "As a project for one of my Master's courses, I developed \"Check It\", a mobile app built with React Native and Firebase that enables users to define personal goals, check off daily achievements, and track their mood. Users can explore the connection between their accomplishments and their emotional well-being, through interactive visualizations.",
+    "content": [
+      {
+        "title": "Features",
+        "paragraph": "The system is integrated with Firebase to handle user authentication and database management. The user can choose some categories that they want to keep track of and every day they get to complete a checklist of what they achieved from each category, while also noting their mood for the day. A \"Reflection\" page is implemented featuring a variety of charts to help users gain deeper self-awareness.",
+        "images": [
+          "/projects/splash.png",
+          "/projects/setup.jpg",
+          "/projects/home.png",
+          "/projects/checklist.jpg",
+          "/projects/checklist2.jpg",
+          "/projects/viz1.jpg",
+          "/projects/viz2.jpg",
+          "/projects/viz3.jpg"
+        ]
+      },
+      {
+        "title": "UX Approach",
+        "paragraph": "The system's design was informed by continuous user testing. A \"Wizard of Oz\" experiment was conducted with multiple user groups to test the impact of push notifications. Also \"Think Aloud\" testing sessions were run to evaluate the app's interface and core concept."
+      }
+    ]
+  },
+  {
+    "id": "yellowpages",
+    "technologies": ["React", "Figma", "Material UI"],
+    "team": ["Artemis Doumeni", "Giannis Tselios", "Georgia Tsoukala"],
+    "projectTitle": "Yellow Pages",
+    "description": "As a project for one of my Master's courses, my team and I developed \"Yellow Pages\", a full-stack web app that centralizes a firm's collective LinkedIn connections to make them easily searchable. The project was conducted in collaboration with a Venture Capital firm. Such companies heavily depend on their networks, but existing tools were inefficient and had confusing interfaces. Our team was divided into frontend and backend development roles. As a member of the two-person frontend team, I was responsible for designing and building an intuitive and highly usable interface in React that transforms how investors filter and analyze network data.",
+    "content": [
+      {
+        "title": "Main Features",
+        "paragraph": "The app includes a filtering system and a results table with information about the connections. The filtering system was organized into logical tabs and the results of the search were collected in a table and a collapsible drawer, where the users can find the contact's full work history and details with a single click. I was part of designing and developing the frontend of the web app, based on feedback from user testing",
+        "images": [
+          "/projects/finalapp_filters.png",
+          "/projects/finalapp_with data.png",
+          "/projects/finalapp_drawer.png",
+          "/projects/finalapp_search.png",
+          "/projects/finalapp_search with data.png"
+        ]
+      }
+    ]
+  }
+]

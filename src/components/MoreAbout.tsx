@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const CardText = ({ text }: { text: string }) => {
   return (
-    <div className="card rounded-lg bg-white h-[240px] w-[180px] px-10 text-2xl flex items-center justify-center">
+    <div className="ovo card rounded-lg bg-white h-[240px] w-[180px] px-10 text-2xl flex items-center justify-center">
       <p>{text}</p>
     </div>
   );

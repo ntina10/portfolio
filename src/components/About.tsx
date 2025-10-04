@@ -151,8 +151,8 @@ const About = () => {
 
         {/* Right Column */}
         <div className="md:col-span-3 gap-3 flex flex-wrap">
-          {skills.map((skill) => (
-            <SkillTag name={skill} />
+          {skills.map((skill, index) => (
+            <SkillTag key={index + skill} name={skill} />
           ))}
         </div>
       </div>
