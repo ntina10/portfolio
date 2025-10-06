@@ -1,4 +1,3 @@
-import { div, img } from "framer-motion/client";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ImagesGallery = (images: string[], projectTitle: string) => {
@@ -38,6 +37,8 @@ interface Props {
 export default function ProjectContent(props: Props) {
   const { project } = props;
   const { id, technologies, projectTitle, description, content } = project;
+
+  console.log(id);
 
   return (
     <div className="ovo flex flex-col gap-8 w-full pb-4">

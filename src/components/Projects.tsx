@@ -2,21 +2,6 @@ import ProjectContent from "./ProjectContent";
 import ProjectFolder from "./ProjectFolder";
 import projectData from "../assets/projectData.json";
 
-const ImagesGallery = ({ images }: { images: string[] }) => {
-  return (
-    <div className="flex overflow-x-auto py-4 gap-4 no-scrollbar">
-      {images.map((src, index) => (
-        <img
-          key={index}
-          src={src}
-          alt={`Project screenshot ${index + 1}`}
-          className="h-80 rounded-lg shrink-0"
-        />
-      ))}
-    </div>
-  );
-};
-
 const Projects = () => {
   return (
     <section id="projects" className="bg-[#f2ece1]">
