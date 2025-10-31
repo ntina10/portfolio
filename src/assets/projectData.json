@@ -8,7 +8,7 @@
       {
         "title": "Feature 1: Centralized User Support & Feedback",
         "paragraph": "I developed a comprehensive user support modal that provides direct access to user guides and other resources. I implemented a \"Contact Us\" form that integrates with our Azure DevOps workflow so that when users report a bug or request a feature, a work item is automatically created in our ADO backlog.",
-        "images": [
+        "deskImages": [
           "/projects/UserSupport.png",
           "/projects/UserSupportGuides.png",
           "/projects/USFormQuestion.png",
@@ -18,7 +18,7 @@
       {
         "title": "Feature 2: Interactive Data Point Annotation",
         "paragraph": "I implemented a graph annotation feature. Users can click on any data point to leave a comment or choose to exclude the point from statistical calculations. A side panel shows an overview of the comments where these can be edited, or deleted.",
-        "images": [
+        "deskImages": [
           "/projects/SPCcomment.png",
           "/projects/SPChoveringOverComment.png",
           "/projects/SPCwithCommentFromHistory.png"
@@ -27,7 +27,7 @@
       {
         "title": "Feature 3: UI/UX Redesign using a new Design System",
         "paragraph": "I utilized the company's new design system to modernize the platform's look and feel and create a more intuitive user journey. I used Figma to create initial design mockups. Then based on these, I developed a number of reusable and responsive components that made the user interface.",
-        "images": [
+        "deskImages": [
           "/projects/LandingPage.png",
           "/projects/ExplorePage.png",
           "/projects/EPwithResults.png"
@@ -36,7 +36,7 @@
       {
         "title": "Feature 4: Role-based Access Control",
         "paragraph": "I designed and developed an admin page that makes it possible to restrict access to sensitive data solutions based on a user's role. On this page, administrators can add or remove users from a solution and assign them specific roles.",
-        "images": ["/projects/AdminPage.png", "/projects/AdminPageEdit.png"]
+        "deskImages": ["/projects/AdminPage.png", "/projects/AdminPageEdit.png"]
       }
     ]
   },
