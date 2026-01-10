@@ -1,6 +1,4 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { useState } from "react";
-import type { MouseEvent } from "react";
 
 const ImagesGallery = (images: string[], projectTitle: string) => {
   return (
