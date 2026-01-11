@@ -1,40 +1,85 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { useState } from "react";
 
 const contactLinks = [
   {
-    name: "Email",
+    name: "Email me",
     href: "mailto:ntinafre@gmail.com", // Use mailto: for emails
     icon: <FaEnvelope size={24} />,
   },
   {
-    name: "LinkedIn",
+    name: "My LinkedIn",
     href: "https://www.linkedin.com/in/konstantina-freri/", // Replace with your LinkedIn URL
     icon: <FaLinkedin size={24} />,
   },
   {
-    name: "GitHub",
+    name: "My GitHub",
     href: "https://github.com/ntina10", // Replace with your GitHub URL
     icon: <FaGithub size={24} />,
   },
 ];
 
 const Contact = () => {
+  const [showCopyBox, setShowCopyBox] = useState(false);
+  const [copiedText, setCopiedText] = useState("Copy :)");
+  const emailAddress = "ntinafre@gmail.com";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(emailAddress);
+    setCopiedText("Copied!");
+    setTimeout(() => {
+      setCopiedText("Copy :)");
+    }, 2000); // Reset after 2 seconds
+  };
+
+  const handleMouseEnterEmailGroup = () => {
+    setShowCopyBox(true);
+  };
+
+  const handleMouseLeaveEmailGroup = () => {
+    setShowCopyBox(false);
+  };
+
   return (
-    <section id="contact" className="px-20 lg:px-40">
-      <h2 className="ovo text-[24px] md:text-4xl pt-25 pb-10">Let's chat!</h2>
-      <div className="flex flex-column justify-between md:justify-start items-center gap-4 md:gap-12">
+    <section id="contact" className="px-6 sm:px-8 lg:px-10">
+      <h2 className="ovo text-[24px] md:text-4xl pt-25 pb-20">Let's chat!</h2>
+      <div className="flex flex-wrap justify-start gap-4">
         {contactLinks.map((link) => (
-          <a
+          <div
             key={link.name}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex justify-center items-center w-16 md:w-24 h-16 md:h-24 rounded-full bg-purple-200"
+            className="relative z-10 group"
+            onMouseEnter={
+              link.name === "Email me" ? handleMouseEnterEmailGroup : undefined
+            }
+            onMouseLeave={
+              link.name === "Email me" ? handleMouseLeaveEmailGroup : undefined
+            }
           >
-            <div className="group-hover:scale-150 group-hover:text-indigo-600 transition-all duration-300">
-              {link.icon}
-            </div>
-          </a>
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pill-button relative flex items-center gap-2 px-6 py-3 rounded-full bg-[#faf6f0] border border-stone-400 transition-colors duration-300 group-hover:bg-indigo-700 group-hover:border-indigo-700 group-hover:text-white z-20"
+            >
+              <div className="icon-wrapper transition-all duration-300 group-hover:animate-bounce group-hover:text-white">
+                {link.icon}
+              </div>
+              <span className="chivo label text-lg font-medium group-hover:text-white">
+                {link.name}
+              </span>
+            </a>
+            {link.name === "Email me" && (
+              <div
+                className={`absolute transform translate-x-1/2 top-full -mt-2 px-10 py-3 border border-stone-400 rounded-full bg-white text-gray-700 cursor-pointer z-5 chivo transition-all duration-300 ${
+                  showCopyBox ? "slide-down" : "slide-up"
+                }`}
+                onMouseEnter={handleMouseEnterEmailGroup}
+                onClick={handleCopyEmail}
+              >
+                {copiedText}
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </section>

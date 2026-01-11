@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full backdrop-blur-md z-50 chivo text-zinc-700">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between py-6">
           <div className="flex-shrink-0">
             <a href="#">Konstantina Freri</a>

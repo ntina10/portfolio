@@ -5,7 +5,7 @@ import Greeting from "./Greeting";
 
 const Intro = () => {
   return (
-    <motion.h1 className="ovo text-[24px] md:text-4xl px-20 lg:px-40 py-10 lg:py-30 xl:max-w-5/6">
+    <motion.h1 className="ovo text-[24px] sm:text-3xl lg:text-5xl px-6 sm:px-8 lg:px-10 py-10 lg:py-30 md:max-w-5/6">
       Hello!
       <Greeting /> My name is Konstantina. <br /> As a{" "}
       <HoverHighlight pathData={data.software}>

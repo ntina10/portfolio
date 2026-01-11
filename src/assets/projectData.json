@@ -66,7 +66,7 @@
         "paragraph": "The system incorporates 2 Arduino boards,  5 RFID readers and an MP3 player. An RFID tag is attached to the bottom of the ambulance so that it gets scanned when the car enters a room."
       },
       {
-        "title": "The process",
+        "title": "The Process",
         "paragraph": "To start with, on-site research was conducted at Herlev Hospital to define the problem and user needs. Iterative prototype led to the final design of the game which was modeled in Fusion 360 and built using laser-cutting and 3D printing. Finally, a mixed-methods evaluation was performed to validate the impact of the game.",
         "images": [
           "/projects/test_subject.jpg",

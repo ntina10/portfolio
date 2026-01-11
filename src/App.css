@@ -1,11 +1,16 @@
+html,
+body {
+  overscroll-behavior: none;
+}
+
 /* Fonts */
 
 .chivo {
-  font-family: 'Chivo Mono', monospace;
+  font-family: "Chivo Mono", monospace;
 }
 
 .ovo {
-  font-family: 'Ovo', serif;
+  font-family: "Ovo", serif;
 }
 
 /* Intro */
@@ -24,4 +29,46 @@ h1 {
 
 .skilltag {
   transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contacts Animations */
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-in forwards;
 }

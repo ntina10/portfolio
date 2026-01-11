@@ -5,14 +5,14 @@ import projectData from "../assets/projectData.json";
 const Projects = () => {
   return (
     <section id="projects" className="bg-[#f2ece1]">
-      <h2 className="ovo text-[24px] md:text-4xl pt-10 pb-20 px-20 lg:px-40">
+      <h2 className="ovo text-[24px] md:text-4xl pt-10 pb-20 px-6 sm:px-8 lg:px-10">
         My Projects
       </h2>
-      <div className="max-w-8/9 lg:max-w-4/5 mx-auto -space-y-14">
+      <div className="px-6 sm:px-8 lg:px-10 mx-auto -space-y-14">
         <ProjectFolder
           title="NNEDS"
           color="bg-emerald-200"
-          tabPosition="md:left-1/8"
+          tabPosition="md:left-1/9"
         >
           <ProjectContent project={projectData[0]} />
         </ProjectFolder>
@@ -20,7 +20,7 @@ const Projects = () => {
         <ProjectFolder
           title="Ambulance Adventure"
           color="bg-blue-200"
-          tabPosition="md:left-2/8"
+          tabPosition="md:left-2/9"
         >
           <ProjectContent project={projectData[1]} />
         </ProjectFolder>
@@ -28,7 +28,7 @@ const Projects = () => {
         <ProjectFolder
           title="Moodle"
           color="bg-blue-300"
-          tabPosition="md:left-3/8"
+          tabPosition="md:left-3/9"
         >
           <ProjectContent project={projectData[2]} />
         </ProjectFolder>
@@ -36,7 +36,7 @@ const Projects = () => {
         <ProjectFolder
           title="CheckIt"
           color="bg-violet-200"
-          tabPosition="md:left-4/8"
+          tabPosition="md:left-4/9"
         >
           <ProjectContent project={projectData[3]} />
         </ProjectFolder>
@@ -44,7 +44,7 @@ const Projects = () => {
         <ProjectFolder
           title="YellowPages"
           color="bg-purple-300"
-          tabPosition="md:left-5/8"
+          tabPosition="md:left-5/9"
         >
           <ProjectContent project={projectData[4]} />
         </ProjectFolder>
