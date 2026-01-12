@@ -31,6 +31,37 @@ h1 {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* More About Marquee */
+
+.text-marquee {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  pointer-events: none;
+}
+
+.text-marquee h2 {
+  white-space: nowrap;
+  margin: 0;
+}
+
+.text-marquee .group {
+  display: flex;
+  gap: 1em;
+  animation: marquee 30s linear infinite;
+  padding-right: 1em;
+}
+
+@keyframes marquee {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+
 /* Contacts Animations */
 
 @keyframes bounce {

@@ -53,17 +53,6 @@ export default function MoreAbout() {
     setIsOpen(!isOpen);
   };
 
-  const textMarqueeVariants: Variants = {
-    animate: {
-      x: [0, -1354], // Move from x=0 to x=-1024 (adjust this value based on text length)
-      transition: {
-        repeat: Infinity,
-        duration: 25,
-        ease: "linear",
-      },
-    },
-  };
-
   const cardMarqueeVariants: Variants = {
     animate: {
       x: [-2250, 0], // Keyframes
@@ -74,6 +63,8 @@ export default function MoreAbout() {
       },
     },
   };
+
+  const marqueeText = Array(8).fill("Wanna know more about me?");
 
   return (
     <section id="more-about" className="more-about mt-20 bg-[#f2ece1]">
@@ -89,23 +80,18 @@ export default function MoreAbout() {
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}
       >
-        <motion.div
-          className="flex whitespace-nowrap hover:text-amber-600 chivo text-lg py-2"
-          variants={textMarqueeVariants}
-          animate="animate"
-        >
-          {/* Render the text multiple times to ensure it fills the screen and loops smoothly */}
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-          <h2 className="pr-8">Wanna know more about me?</h2>
-        </motion.div>
+        <div className="text-marquee chivo text-lg py-2">
+          <div className="group">
+            {marqueeText.map((text, index) => (
+              <h2 key={index}>{text}</h2>
+            ))}
+          </div>
+          <div aria-hidden className="group">
+            {marqueeText.map((text, index) => (
+              <h2 key={index}>{text}</h2>
+            ))}
+          </div>
+        </div>
       </div>
       <AnimatePresence>
         {isOpen && (

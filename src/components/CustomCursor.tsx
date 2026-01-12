@@ -24,8 +24,8 @@ const CustomCursor = ({
         cursor: "none",
       }}
     >
-      <span className="text-white text-xs font-bold chivo">
-        {isOpen ? "Close" : "Peak!"}
+      <span className="text-white text-md font-bold ovo">
+        {isOpen ? "Close" : "Peek!"}
       </span>
     </motion.div>
   );
