@@ -134,8 +134,6 @@ export default function ProjectContent(props: Props) {
 
       {content.length > 0 &&
         content.map((section, index) => {
-          console.log(typeof section);
-          console.log(section);
           return (
             <div key={index} className="flex flex-col gap-4">
               {section.title && <h3 className="chivo">{section.title}</h3>}

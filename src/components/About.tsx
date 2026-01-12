@@ -26,7 +26,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="px-6 sm:px-8 lg:px-10 pr-15 lg:pr-25 relative z-1 bg-[#faf6f0] mt-[-0.5rem]"
+      className="px-6 sm:px-8 lg:px-10 pr-15 lg:pr-25 relative z-1 bg-[#faf6f0] mt-[-1rem]"
     >
       <h2 className="ovo text-[24px] md:text-4xl pt-10 pb-20">About me</h2>
       <div className="hidden md:block md:col-span-3" />

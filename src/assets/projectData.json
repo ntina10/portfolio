@@ -1,6 +1,9 @@
 [
   {
     "id": "nneds",
+    "color": "bg-emerald-200",
+    "tabPosition": "md:left-1/12",
+    "tags": ["#design", "#develop", "#web"],
     "technologies": ["Vue.js", "Django", "Figma", "Azure DevOps"],
     "projectTitle": "NNEDS",
     "description": "As a student frontend developer at Novo Nordisk, I was part of making the developed platform more user-friendly. My job included building four major features: A user support modal, a data point annotation feature, a UX upgrade, and a new admin page for access control.",
@@ -42,6 +45,9 @@
   },
   {
     "id": "ambulanceadventure",
+    "color": "bg-blue-200",
+    "tabPosition": "md:left-2/12",
+    "tags": ["#design", "#physical"],
     "technologies": [
       "Fusion 360",
       "Fritzing",
@@ -78,6 +84,9 @@
   },
   {
     "id": "moodle",
+    "color": "bg-blue-300",
+    "tabPosition": "md:left-3/12",
+    "tags": ["#develop", "#mobile"],
     "technologies": ["Flutter", "Flask", "Py-Feat", "Spotify API"],
     "projectTitle": "Moodle",
     "description": "For my diploma thesis, I developed \"Moodle\", an Android application where a user can take a selfie and instantly receive a curated playlist that matches their mood. I was responsible for bringing a complete UI/UX design to life, building the mobile app, creating a backend API for the machine learning component, and integrating with the Spotify API.",
@@ -113,6 +122,9 @@
   },
   {
     "id": "checkit",
+    "color": "bg-violet-200",
+    "tabPosition": "md:left-4/12",
+    "tags": ["#design", "#develop", "#mobile"],
     "technologies": ["React Native", "Firebase", "Figma"],
     "projectTitle": "Check It",
     "description": "As a project for one of my Master's courses, I developed \"Check It\", a mobile app built with React Native and Firebase that enables users to define personal goals, check off daily achievements, and track their mood. Users can explore the connection between their accomplishments and their emotional well-being, through interactive visualizations.",
@@ -139,6 +151,9 @@
   },
   {
     "id": "yellowpages",
+    "color": "bg-purple-300",
+    "tabPosition": "md:left-5/12",
+    "tags": ["#design", "#research", "#web"],
     "technologies": ["React", "Figma", "Material UI"],
     "team": ["Artemis Doumeni", "Giannis Tselios", "Georgia Tsoukala"],
     "projectTitle": "Yellow Pages",
