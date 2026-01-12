@@ -1,5 +1,6 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useState } from "react";
+import CustomCursor from "./CustomCursor";
 
 const CardText = ({ text }: { text: string }) => {
   return (
@@ -23,6 +24,34 @@ const CardImage = ({ image }: { image: string }) => {
 
 export default function MoreAbout() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    (document.documentElement as any).style.setProperty(
+      "--cursor-x",
+      `${e.clientX}px`
+    );
+    (document.documentElement as any).style.setProperty(
+      "--cursor-y",
+      `${e.clientY}px`
+    );
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    setIsClicked(false);
+  };
+
+  const handleClick = () => {
+    setIsClicked(true);
+    setTimeout(() => setIsClicked(false), 150);
+    setIsOpen(!isOpen);
+  };
 
   const textMarqueeVariants: Variants = {
     animate: {
@@ -48,9 +77,17 @@ export default function MoreAbout() {
 
   return (
     <section id="more-about" className="more-about mt-20 bg-[#f2ece1]">
+      <CustomCursor
+        isHovering={isHovering}
+        isClicked={isClicked}
+        isOpen={isOpen}
+      />
       <div
-        className="w-full overflow-hidden cursor-pointer py-4"
-        onClick={() => setIsOpen(!isOpen)}
+        className="w-full overflow-hidden cursor-none py-4"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         <motion.div
           className="flex whitespace-nowrap hover:text-amber-600 chivo text-lg py-2"
