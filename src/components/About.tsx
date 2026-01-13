@@ -15,7 +15,6 @@ const About = () => {
     "React Native",
     "JavaScript",
     "Flutter",
-    "Java",
     "Python",
     "Django",
     "Git",

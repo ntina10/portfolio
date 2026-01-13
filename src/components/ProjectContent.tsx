@@ -1,4 +1,5 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
+import LightboxGallery from "./LightboxGallery";
 
 type ImageType = "desktop" | "mobile" | "square";
 
@@ -31,12 +32,14 @@ const getImageClassName = (type: ImageType | string, totalImages: number) => {
   switch (type) {
     case "mobile":
       return totalImages <= 3
-        ? `w-[calc((100%-2rem)/${totalImages})] rounded-lg`
+        ? `flex-1 max-h-110 rounded-lg`
         : "max-h-115 rounded-lg shrink-0"; // Vertical orientation
     case "desktop":
       return "max-h-100 rounded-lg shrink-0"; // Horizontal orientation
     case "square":
-      return "w-110 h-110 rounded-lg object-cover shrink-0";
+      return totalImages === 2
+        ? "flex-1 h-auto max-h-110 rounded-lg object-cover"
+        : "w-110 h-110 rounded-lg object-cover shrink-0";
     default:
       return "max-h-100 rounded-lg shrink-0";
   }
@@ -44,30 +47,40 @@ const getImageClassName = (type: ImageType | string, totalImages: number) => {
 
 const ImagesContainer = ({
   images,
-  projectTitle,
+  galleryId,
 }: {
   images: ProjectImage[];
-  projectTitle: string;
+  galleryId: string;
 }) => {
+  const shouldWrap =
+    (images[0]?.type === "square" && images.length === 2) ||
+    (images[0]?.type === "mobile" && images.length === 3);
+
+  // LightboxGallery will render anchors + imgs and initialize PhotoSwipe
   return (
-    <div className="flex overflow-x-auto pt-4 gap-4 no-scrollbar">
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image.src}
-          alt={image.caption || `${projectTitle} image ${index + 1}`}
-          className={getImageClassName(image.type, images.length)}
-          role="button"
-          tabIndex={0}
-        />
-      ))}
+    <div
+      className={`flex pt-4 gap-4 no-scrollbar ${
+        shouldWrap ? "flex-wrap justify-center" : "overflow-x-auto flex-nowrap"
+      }`}
+    >
+      <LightboxGallery
+        galleryID={galleryId}
+        images={images.map((img) => ({
+          src: img.src,
+          caption: img.caption,
+          type: img.type,
+        }))}
+        getImageClassName={(type, total) =>
+          getImageClassName(type || "", total)
+        }
+      />
     </div>
   );
 };
 
 export default function ProjectContent(props: Props) {
   const { project } = props;
-  const { id, technologies, projectTitle, description, content } = project;
+  const { id, technologies, description, content } = project;
 
   console.log(id);
 
@@ -85,7 +98,7 @@ export default function ProjectContent(props: Props) {
               {section.images && (
                 <ImagesContainer
                   images={section.images}
-                  projectTitle={projectTitle}
+                  galleryId={`${id}-${index}`}
                 />
               )}
               {section.imageButton && (
