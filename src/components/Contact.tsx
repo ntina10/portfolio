@@ -47,7 +47,11 @@ const Contact = () => {
         {contactLinks.map((link) => (
           <div
             key={link.name}
-            className="relative z-10 group"
+            className={
+              link.name === "Email me"
+                ? "relative flex items-center group"
+                : "relative z-10 group"
+            }
             onMouseEnter={
               link.name === "Email me" ? handleMouseEnterEmailGroup : undefined
             }
@@ -69,15 +73,25 @@ const Contact = () => {
               </span>
             </a>
             {link.name === "Email me" && (
-              <div
-                className={`absolute transform translate-x-1/2 top-full -mt-2 px-10 py-3 border border-stone-400 rounded-full bg-white text-gray-700 cursor-pointer z-5 chivo transition-all duration-300 ${
-                  showCopyBox ? "slide-down" : "slide-up"
-                }`}
-                onMouseEnter={handleMouseEnterEmailGroup}
-                onClick={handleCopyEmail}
-              >
-                {copiedText}
-              </div>
+              <>
+                {/* Desktop: hover tooltip below */}
+                <div
+                  className={`hidden md:block absolute transform translate-x-1/2 top-full -mt-2 px-10 py-3 border border-stone-400 rounded-full bg-white text-gray-700 cursor-pointer z-5 chivo transition-all duration-300 ${
+                    showCopyBox ? "slide-down" : "slide-up"
+                  }`}
+                  onMouseEnter={handleMouseEnterEmailGroup}
+                  onClick={handleCopyEmail}
+                >
+                  {copiedText}
+                </div>
+                {/* Mobile: always visible button to the right */}
+                <button
+                  onClick={handleCopyEmail}
+                  className="md:hidden pill-button relative -ml-4 px-8 py-3 border border-stone-400 rounded-full bg-white text-gray-700 cursor-pointer chivo font-medium"
+                >
+                  {copiedText}
+                </button>
+              </>
             )}
           </div>
         ))}

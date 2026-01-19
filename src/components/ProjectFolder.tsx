@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
@@ -12,20 +12,18 @@ interface Props {
 type SpecsTagProps = {
   name: string;
   index: number;
-  isHovering: boolean;
+  shouldShow: boolean;
 };
 
-const SpecsTag = ({ name, index, isHovering }: SpecsTagProps) => (
+const SpecsTag = ({ name, index, shouldShow }: SpecsTagProps) => (
   <motion.div
     className="ovo rounded-full inline-block border border-stone-400 bg-[#faf6f0] px-4 py-1"
     animate={
-      isHovering
+      shouldShow
         ? {
-            // y: -40,
             opacity: 1,
           }
         : {
-            // y: 0,
             opacity: 0,
           }
     }
@@ -42,8 +40,18 @@ const SpecsTag = ({ name, index, isHovering }: SpecsTagProps) => (
 export default function ProjectFolder(props: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const { title, tags, color, tabPosition, children } = props;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setIsDesktop(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
 
   const contentVariants = {
     hidden: {
@@ -70,8 +78,8 @@ export default function ProjectFolder(props: Props) {
     <div
       onClick={() => setIsOpen(!isOpen)}
       className="group pointer-events-none"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseEnter={() => isDesktop && setIsHovering(true)}
+      onMouseLeave={() => isDesktop && setIsHovering(false)}
     >
       <div
         className={`relative pt-10 overflow-hidden transition-all duration-300 ${
@@ -100,7 +108,9 @@ export default function ProjectFolder(props: Props) {
               key={tag}
               name={tag}
               index={index}
-              isHovering={isHovering || isOpen}
+              // On Mobile: isHovering is always false, so it relies purely on 'isOpen'
+              // On Desktop: it relies on either hovering OR being open
+              shouldShow={isHovering || isOpen}
             />
           ))}
         </div>

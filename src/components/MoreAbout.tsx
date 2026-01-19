@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CustomCursor from "./CustomCursor";
 
 const CardText = ({ text }: { text: string }) => {
@@ -26,8 +26,24 @@ export default function MoreAbout() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false); // New state to track device type
+
+  // Check if device supports hover on mount
+  useEffect(() => {
+    // media query: (hover: hover) matches devices with a mouse/trackpad
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setIsDesktop(mediaQuery.matches);
+
+    // Optional: Update if the user attaches a mouse to a tablet dynamically
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    // Logic guard: Don't update CSS variables on mobile
+    if (!isDesktop) return;
+
     (document.documentElement as any).style.setProperty(
       "--cursor-x",
       `${e.clientX}px`
@@ -67,11 +83,13 @@ export default function MoreAbout() {
   const marqueeText = Array(8).fill("Wanna know more about me?");
 
   return (
-    <section id="more-about" className="more-about mt-20 bg-[#f2ece1]">
+    <section id="more-about" className="more-about mt-20 bg-[#f2ece1] relative">
       <CustomCursor
         isHovering={isHovering}
         isClicked={isClicked}
         isOpen={isOpen}
+        isDesktop={isDesktop}
+        onMobileClick={handleClick}
       />
       <div
         className="w-full overflow-hidden cursor-none py-4"
@@ -80,7 +98,7 @@ export default function MoreAbout() {
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}
       >
-        <div className="text-marquee chivo text-lg py-2">
+        <div className="text-marquee chivo text-lg py-2 no-scrollbar">
           <div className="group">
             {marqueeText.map((text, index) => (
               <h2 key={index}>{text}</h2>
