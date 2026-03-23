@@ -15,11 +15,13 @@ export default function LightboxGallery({
   images,
   getImageClassName,
   galleryClassName,
+  getItemClassName,
 }: {
   galleryID: string;
   images: GalleryImage[];
   getImageClassName?: (type: string | undefined, total: number) => string;
   galleryClassName?: string;
+  getItemClassName?: (type: string | undefined, total: number) => string;
 }) {
   useEffect(() => {
     // ensure anchors have width/height for photoswipe; preload if missing
@@ -74,7 +76,7 @@ export default function LightboxGallery({
           target="_blank"
           rel="noreferrer"
           aria-label={image.caption || `image-${index}`}
-          className="flex-shrink-0"
+          className={getItemClassName?.(image.type, images.length) || "flex-shrink-0"}
         >
           <img
             src={image.src}

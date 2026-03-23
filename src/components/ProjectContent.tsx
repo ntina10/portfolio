@@ -37,16 +37,27 @@ const getImageClassName = (type: ImageType | string, totalImages: number) => {
   switch (type) {
     case "mobile":
       return totalImages <= 3
-        ? "w-[28vw] max-w-[7rem] rounded-lg md:w-auto md:max-h-110"
+        ? "w-[28vw] max-w-[7rem] rounded-lg md:block md:h-auto md:w-auto md:max-w-full md:max-h-96"
         : "w-[38vw] max-h-[18rem] rounded-lg shrink-0 md:w-auto md:max-h-115"; // Vertical orientation
     case "desktop":
       return "w-[min(calc(100vw-6rem),32rem)] max-h-[12rem] rounded-lg object-contain shrink-0 md:w-auto md:max-h-100"; // Horizontal orientation
     case "square":
       return totalImages === 2
-        ? "aspect-square w-full max-w-[12rem] rounded-lg object-cover md:h-auto md:w-auto md:max-h-110"
+        ? "aspect-square w-full max-w-[12rem] self-center rounded-lg object-cover md:block md:aspect-auto md:h-auto md:w-full md:max-w-none md:self-auto md:max-h-96 md:object-contain"
         : "h-[70vw] w-[70vw] max-h-[18rem] max-w-[18rem] rounded-lg object-cover shrink-0 md:h-110 md:w-110";
     default:
       return "w-[min(calc(100vw-6rem),32rem)] max-h-[12rem] rounded-lg object-contain shrink-0 md:w-auto md:max-h-100";
+  }
+};
+
+const getItemClassName = (type: ImageType | string) => {
+  switch (type) {
+    case "mobile":
+      return "flex-shrink-0";
+    case "square":
+      return "flex-shrink-0";
+    default:
+      return "flex-shrink-0";
   }
 };
 
@@ -204,8 +215,11 @@ const ImagesContainer = ({
               type: img.type,
             }))}
             galleryClassName={
-              shouldWrap ? "flex-wrap justify-center" : "w-max flex-nowrap"
+              shouldWrap
+                ? "flex-wrap justify-center"
+                : "w-max flex-nowrap"
             }
+            getItemClassName={(type, total) => getItemClassName(type || "", total)}
             getImageClassName={(type, total) =>
               getImageClassName(type || "", total)
             }
