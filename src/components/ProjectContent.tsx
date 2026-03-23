@@ -1,4 +1,9 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 import LightboxGallery from "./LightboxGallery";
 
 type ImageType = "desktop" | "mobile" | "square";
@@ -32,16 +37,16 @@ const getImageClassName = (type: ImageType | string, totalImages: number) => {
   switch (type) {
     case "mobile":
       return totalImages <= 3
-        ? `flex-1 max-h-110 rounded-lg`
-        : "max-h-115 rounded-lg shrink-0"; // Vertical orientation
+        ? "w-[28vw] max-w-[7rem] rounded-lg md:w-auto md:max-h-110"
+        : "w-[38vw] max-h-[18rem] rounded-lg shrink-0 md:w-auto md:max-h-115"; // Vertical orientation
     case "desktop":
-      return "max-h-100 rounded-lg shrink-0"; // Horizontal orientation
+      return "w-[min(calc(100vw-6rem),32rem)] max-h-[12rem] rounded-lg object-contain shrink-0 md:w-auto md:max-h-100"; // Horizontal orientation
     case "square":
       return totalImages === 2
-        ? "flex-1 h-auto max-h-110 rounded-lg object-cover"
-        : "w-110 h-110 rounded-lg object-cover shrink-0";
+        ? "aspect-square w-full max-w-[12rem] rounded-lg object-cover md:h-auto md:w-auto md:max-h-110"
+        : "h-[70vw] w-[70vw] max-h-[18rem] max-w-[18rem] rounded-lg object-cover shrink-0 md:h-110 md:w-110";
     default:
-      return "max-h-100 rounded-lg shrink-0";
+      return "w-[min(calc(100vw-6rem),32rem)] max-h-[12rem] rounded-lg object-contain shrink-0 md:w-auto md:max-h-100";
   }
 };
 
@@ -52,28 +57,189 @@ const ImagesContainer = ({
   images: ProjectImage[];
   galleryId: string;
 }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isScrollable, setIsScrollable] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
   const shouldWrap =
     (images[0]?.type === "square" && images.length === 2) ||
     (images[0]?.type === "mobile" && images.length === 3);
 
-  // LightboxGallery will render anchors + imgs and initialize PhotoSwipe
+  useEffect(() => {
+    if (shouldWrap) {
+      setIsScrollable(false);
+      setCanScrollLeft(false);
+      setCanScrollRight(false);
+      return;
+    }
+
+    const scrollContainer = scrollRef.current;
+
+    if (!scrollContainer) {
+      return;
+    }
+
+    const updateScrollState = () => {
+      const maxScrollLeft =
+        scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      const hasHorizontalOverflow = maxScrollLeft > 8;
+
+      setIsScrollable(hasHorizontalOverflow);
+      setCanScrollLeft(scrollContainer.scrollLeft > 8);
+      setCanScrollRight(scrollContainer.scrollLeft < maxScrollLeft - 8);
+    };
+
+    updateScrollState();
+
+    const resizeObserver = new ResizeObserver(updateScrollState);
+    resizeObserver.observe(scrollContainer);
+
+    const imagesInGallery = Array.from(scrollContainer.querySelectorAll("img"));
+
+    imagesInGallery.forEach((image) => {
+      image.addEventListener("load", updateScrollState);
+      image.addEventListener("error", updateScrollState);
+    });
+
+    scrollContainer.addEventListener("scroll", updateScrollState, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateScrollState);
+
+    return () => {
+      resizeObserver.disconnect();
+      imagesInGallery.forEach((image) => {
+        image.removeEventListener("load", updateScrollState);
+        image.removeEventListener("error", updateScrollState);
+      });
+      scrollContainer.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, [images, shouldWrap]);
+
+  const scrollGallery = (direction: "left" | "right") => {
+    const scrollContainer = scrollRef.current;
+
+    if (!scrollContainer) {
+      return;
+    }
+
+    const galleryImages = Array.from(
+      scrollContainer.querySelectorAll<HTMLAnchorElement>("a"),
+    );
+
+    if (galleryImages.length === 0) {
+      return;
+    }
+
+    const baseOffset = galleryImages[0].offsetLeft;
+    const imagePositions = galleryImages.map((image) =>
+      Math.max(image.offsetLeft - baseOffset, 0),
+    );
+    const maxScrollLeft =
+      scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    const currentScrollLeft = scrollContainer.scrollLeft;
+    const closestImageIndex = imagePositions.reduce(
+      (closestIndex, position, index) => {
+        const currentDistance = Math.abs(position - currentScrollLeft);
+        const closestDistance = Math.abs(
+          imagePositions[closestIndex] - currentScrollLeft,
+        );
+
+        return currentDistance < closestDistance ? index : closestIndex;
+      },
+      0,
+    );
+
+    const targetIndex =
+      direction === "left"
+        ? Math.max(closestImageIndex - 1, 0)
+        : Math.min(closestImageIndex + 1, galleryImages.length - 1);
+
+    scrollContainer.scrollTo({
+      left: Math.min(Math.max(imagePositions[targetIndex], 0), maxScrollLeft),
+      behavior: "smooth",
+    });
+  };
+
+  const arrowButtonClass =
+    "pointer-events-auto flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-stone-200/80 bg-[#faf6f0]/95 text-stone-700 backdrop-blur-md transition duration-200 enabled:hover:-translate-y-0.5 enabled:hover:border-stone-500 enabled:hover:bg-[#fffaf2] enabled:hover:text-stone-900 disabled:cursor-not-allowed disabled:opacity-35";
+
   return (
-    <div
-      className={`flex pt-4 gap-4 no-scrollbar ${
-        shouldWrap ? "flex-wrap justify-center" : "overflow-x-auto flex-nowrap"
-      }`}
-    >
-      <LightboxGallery
-        galleryID={galleryId}
-        images={images.map((img) => ({
-          src: img.src,
-          caption: img.caption,
-          type: img.type,
-        }))}
-        getImageClassName={(type, total) =>
-          getImageClassName(type || "", total)
-        }
-      />
+    <div className="pt-4">
+      <div className="relative md:px-6">
+        {!shouldWrap && isScrollable && (
+          <div className="mb-3 flex justify-end gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={() => scrollGallery("left")}
+              disabled={!canScrollLeft}
+              aria-label="Scroll project images left"
+              className={arrowButtonClass}
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollGallery("right")}
+              disabled={!canScrollRight}
+              aria-label="Scroll project images right"
+              className={arrowButtonClass}
+            >
+              <FaChevronRight />
+            </button>
+          </div>
+        )}
+
+        <div
+          ref={scrollRef}
+          className={`no-scrollbar ${shouldWrap ? "" : "overflow-x-auto"}`}
+        >
+          <LightboxGallery
+            galleryID={galleryId}
+            images={images.map((img) => ({
+              src: img.src,
+              caption: img.caption,
+              type: img.type,
+            }))}
+            galleryClassName={
+              shouldWrap ? "flex-wrap justify-center" : "w-max flex-nowrap"
+            }
+            getImageClassName={(type, total) =>
+              getImageClassName(type || "", total)
+            }
+          />
+        </div>
+
+        {!shouldWrap && isScrollable && (
+          <>
+            <div className="pointer-events-none absolute inset-y-0 left-6 z-10 hidden -translate-x-1/2 items-center md:flex">
+              <button
+                type="button"
+                onClick={() => scrollGallery("left")}
+                disabled={!canScrollLeft}
+                aria-label="Scroll project images left"
+                className={arrowButtonClass}
+              >
+                <FaChevronLeft />
+              </button>
+            </div>
+
+            <div className="pointer-events-none absolute inset-y-0 right-6 z-10 hidden translate-x-1/2 items-center md:flex">
+              <button
+                type="button"
+                onClick={() => scrollGallery("right")}
+                disabled={!canScrollRight}
+                aria-label="Scroll project images right"
+                className={arrowButtonClass}
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };
@@ -81,8 +247,6 @@ const ImagesContainer = ({
 export default function ProjectContent(props: Props) {
   const { project } = props;
   const { id, technologies, description, content } = project;
-
-  console.log(id);
 
   return (
     <div className="ovo flex flex-col gap-8 w-full pb-4">

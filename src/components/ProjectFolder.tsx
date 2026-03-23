@@ -117,7 +117,7 @@ export default function ProjectFolder(props: Props) {
 
         {/* The Main Body */}
         <div
-          className={`pt-15 px-10 lg:px-30 pb-20 rounded-t-md ${backgroundColor} pointer-events-auto`}
+          className={`pt-15 px-5 md:px-10 lg:px-30 pb-20 rounded-t-md ${backgroundColor} pointer-events-auto`}
         >
           <AnimatePresence>
             {isOpen && (

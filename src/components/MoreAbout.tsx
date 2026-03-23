@@ -44,14 +44,9 @@ export default function MoreAbout() {
     // Logic guard: Don't update CSS variables on mobile
     if (!isDesktop) return;
 
-    (document.documentElement as any).style.setProperty(
-      "--cursor-x",
-      `${e.clientX}px`
-    );
-    (document.documentElement as any).style.setProperty(
-      "--cursor-y",
-      `${e.clientY}px`
-    );
+    const rootStyle = document.documentElement.style;
+    rootStyle.setProperty("--cursor-x", `${e.clientX}px`);
+    rootStyle.setProperty("--cursor-y", `${e.clientY}px`);
   };
 
   const handleMouseEnter = () => {

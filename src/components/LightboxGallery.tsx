@@ -14,10 +14,12 @@ export default function LightboxGallery({
   galleryID,
   images,
   getImageClassName,
+  galleryClassName,
 }: {
   galleryID: string;
   images: GalleryImage[];
   getImageClassName?: (type: string | undefined, total: number) => string;
+  galleryClassName?: string;
 }) {
   useEffect(() => {
     // ensure anchors have width/height for photoswipe; preload if missing
@@ -41,7 +43,7 @@ export default function LightboxGallery({
       }
     });
 
-    let lightbox = new PhotoSwipeLightbox({
+    const lightbox = new PhotoSwipeLightbox({
       gallery: "#" + galleryID,
       children: "a",
       pswpModule: () => import("photoswipe"),
@@ -55,14 +57,16 @@ export default function LightboxGallery({
       loaders.forEach((l) => {
         l.onload = null;
       });
-      lightbox = null as any;
     };
     // galleryID and images are stable per gallery render
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="pswp-gallery flex gap-4" id={galleryID}>
+    <div
+      className={`pswp-gallery flex gap-4 ${galleryClassName || ""}`}
+      id={galleryID}
+    >
       {images.map((image, index) => (
         <a
           href={image.src}
