@@ -219,7 +219,7 @@ const ImagesContainer = ({
                 ? "flex-wrap justify-center"
                 : "w-max flex-nowrap"
             }
-            getItemClassName={(type, total) => getItemClassName(type || "", total)}
+            getItemClassName={(type) => getItemClassName(type || "")}
             getImageClassName={(type, total) =>
               getImageClassName(type || "", total)
             }
