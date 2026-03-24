@@ -51,15 +51,63 @@ h1 {
   gap: 1em;
   animation: marquee 30s linear infinite;
   padding-right: 1em;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.text-marquee[data-running="false"] .group {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
   from {
-    translate: 0;
+    transform: translate3d(0, 0, 0);
   }
   to {
-    translate: -100%;
+    transform: translate3d(-100%, 0, 0);
   }
+}
+
+.more-about-cards-track {
+  width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(-2250px, 0, 0);
+  animation: hobbyMarquee 40s linear infinite;
+}
+
+.more-about-cards-track[data-running="false"] {
+  animation-play-state: paused;
+}
+
+@keyframes hobbyMarquee {
+  from {
+    transform: translate3d(-2250px, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.more-about-cursor {
+  will-change: transform;
+  transform: translate3d(-9999px, -9999px, 0);
+}
+
+.more-about-cursor-bubble {
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.more-about-cursor[data-visible="true"] .more-about-cursor-bubble {
+  transform: scale(1);
+}
+
+.more-about-cursor[data-visible="true"][data-clicked="true"] .more-about-cursor-bubble {
+  transform: scale(1.2);
 }
 
 /* Contacts Animations */

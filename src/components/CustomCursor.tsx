@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import type { RefObject } from "react";
+
 interface CustomCursorProps {
   isHovering: boolean;
   isClicked: boolean;
   isOpen: boolean;
   isDesktop: boolean;
   onMobileClick: () => void;
+  cursorRef: RefObject<HTMLDivElement | null>;
 }
 
 const CustomCursor = ({
@@ -13,6 +16,7 @@ const CustomCursor = ({
   isOpen,
   isDesktop,
   onMobileClick,
+  cursorRef,
 }: CustomCursorProps) => {
   if (!isDesktop) {
     return (
@@ -36,25 +40,19 @@ const CustomCursor = ({
   }
 
   return (
-    <motion.div
-      className="fixed w-12 h-12 bg-black rounded-full flex items-center justify-center pointer-events-none z-50"
-      animate={{
-        scale: isHovering ? (isClicked ? 1.2 : 1) : 0,
-      }}
-      transition={{ duration: 0.2, delay: isClicked ? 0 : 0 }}
-      style={{
-        left: "var(--cursor-x)",
-        top: "var(--cursor-y)",
-        x: "-50%",
-        y: "-50%",
-        cursor: "none",
-      }}
+    <div
+      ref={cursorRef}
+      className="more-about-cursor fixed left-0 top-0 pointer-events-none z-50"
+      data-visible={isHovering}
+      data-clicked={isClicked}
       aria-hidden="true"
     >
-      <span className="text-white text-md font-bold ovo">
-        {isOpen ? "Close" : "Peek!"}
-      </span>
-    </motion.div>
+      <div className="more-about-cursor-bubble flex h-12 w-12 items-center justify-center rounded-full bg-black">
+        <span className="text-white text-md font-bold ovo">
+          {isOpen ? "Close" : "Peek!"}
+        </span>
+      </div>
+    </div>
   );
 };
 
