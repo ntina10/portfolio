@@ -287,7 +287,11 @@ export default function ProjectContent(props: Props) {
                     target="_blank "
                   >
                     <FaExternalLinkAlt className="absolute right-2 top-2 opacity-0 group-hover/img:opacity-100"></FaExternalLinkAlt>
-                    <img src={section.imageButton.image}></img>
+                    <img
+                      src={section.imageButton.image}
+                      loading="lazy"
+                      decoding="async"
+                    ></img>
                   </a>
                 </div>
               )}

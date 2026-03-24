@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type SyntheticEvent } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 
@@ -24,27 +24,6 @@ export default function LightboxGallery({
   getItemClassName?: (type: string | undefined, total: number) => string;
 }) {
   useEffect(() => {
-    // ensure anchors have width/height for photoswipe; preload if missing
-    const anchors = Array.from(
-      document.querySelectorAll(`#${galleryID} a`)
-    ) as HTMLAnchorElement[];
-
-    const loaders: HTMLImageElement[] = [];
-
-    anchors.forEach((a) => {
-      const widthAttr = a.getAttribute("data-pswp-width");
-      const heightAttr = a.getAttribute("data-pswp-height");
-      if (!widthAttr || !heightAttr) {
-        const img = new Image();
-        loaders.push(img);
-        img.src = a.href;
-        img.onload = () => {
-          a.setAttribute("data-pswp-width", String(img.naturalWidth));
-          a.setAttribute("data-pswp-height", String(img.naturalHeight));
-        };
-      }
-    });
-
     const lightbox = new PhotoSwipeLightbox({
       gallery: "#" + galleryID,
       children: "a",
@@ -55,14 +34,22 @@ export default function LightboxGallery({
 
     return () => {
       lightbox.destroy();
-      // clear any remaining loaders
-      loaders.forEach((l) => {
-        l.onload = null;
-      });
     };
     // galleryID and images are stable per gallery render
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const syncAnchorDimensions = (event: SyntheticEvent<HTMLImageElement>) => {
+    const image = event.currentTarget;
+    const anchor = image.closest("a");
+
+    if (!anchor) {
+      return;
+    }
+
+    anchor.setAttribute("data-pswp-width", String(image.naturalWidth));
+    anchor.setAttribute("data-pswp-height", String(image.naturalHeight));
+  };
 
   return (
     <div
@@ -76,11 +63,16 @@ export default function LightboxGallery({
           target="_blank"
           rel="noreferrer"
           aria-label={image.caption || `image-${index}`}
+          data-pswp-width={image.width}
+          data-pswp-height={image.height}
           className={getItemClassName?.(image.type, images.length) || "flex-shrink-0"}
         >
           <img
             src={image.src}
             alt={image.caption || ""}
+            loading="lazy"
+            decoding="async"
+            onLoad={syncAnchorDimensions}
             className={getImageClassName?.(image.type, images.length) || ""}
           />
         </a>

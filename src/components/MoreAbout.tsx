@@ -17,6 +17,8 @@ const CardImage = ({ image }: { image: string }) => {
         className="w-full h-full rounded-lg object-cover"
         src={image}
         alt="amigurumi"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );
@@ -121,29 +123,29 @@ export default function MoreAbout() {
               animate="animate"
             >
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/hobbies/seagull.jpg" />
-              <CardImage image="/hobbies/bear.jpg" />
-              <CardImage image="/hobbies/bunny.jpg" />
+              <CardImage image="/hobbies/seagull.webp" />
+              <CardImage image="/hobbies/bear.webp" />
+              <CardImage image="/hobbies/bunny.webp" />
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/hobbies/crab.jpg" />
-              <CardImage image="/hobbies/dog.jpg" />
-              {/* <CardImage image="/hobbies/ladybug.jpg" /> */}
+              <CardImage image="/hobbies/crab.webp" />
+              <CardImage image="/hobbies/dog.webp" />
+              {/* <CardImage image="/hobbies/ladybug.webp" /> */}
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/hobbies/duck.jpg" />
-              <CardImage image="/hobbies/tucan.jpg" />
-              <CardImage image="/hobbies/fox.jpg" />
+              <CardImage image="/hobbies/duck.webp" />
+              <CardImage image="/hobbies/tucan.webp" />
+              <CardImage image="/hobbies/fox.webp" />
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/hobbies/seagull.jpg" />
-              <CardImage image="/hobbies/bear.jpg" />
-              <CardImage image="/hobbies/bunny.jpg" />
+              <CardImage image="/hobbies/seagull.webp" />
+              <CardImage image="/hobbies/bear.webp" />
+              <CardImage image="/hobbies/bunny.webp" />
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/hobbies/crab.jpg" />
-              <CardImage image="/hobbies/dog.jpg" />
-              {/* <CardImage image="/hobbies/ladybug.jpg" /> */}
+              <CardImage image="/hobbies/crab.webp" />
+              <CardImage image="/hobbies/dog.webp" />
+              {/* <CardImage image="/hobbies/ladybug.webp" /> */}
               <CardText text="I love making animals out of yarn" />
-              <CardImage image="/hobbies/duck.jpg" />
-              <CardImage image="/hobbies/tucan.jpg" />
-              <CardImage image="/hobbies/fox.jpg" />
+              <CardImage image="/hobbies/duck.webp" />
+              <CardImage image="/hobbies/tucan.webp" />
+              <CardImage image="/hobbies/fox.webp" />
             </motion.div>
           </motion.div>
         )}
